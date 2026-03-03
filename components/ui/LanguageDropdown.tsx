@@ -33,7 +33,7 @@ const LanguageDropdown = () => {
 					className="h-7 px-2 flex items-center justify-between cursor-pointer"
 					onClick={toggleOpen}>
 					<img
-						src="languageIcon.svg"
+						src="/languageIcon.svg"
 						alt="languageIcon"
 						className="w-3.5 h-4"
 					/>
