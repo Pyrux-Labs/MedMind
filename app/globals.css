@@ -22,17 +22,17 @@
 }
 
 @theme {
-    --main-color: hsl(186, 100%, 13%, 100%);
-    --text-color: hsl(186, 100%, 13%, 80%);
-    --footer-labels: hsl(186, 100%, 13%, 60%);
-    --main-bg: hsl(187, 13%, 87%, 100%);
-    --secondary-bg: hsl(47, 18%, 80%, 100%);
-    --values-card-bg: hsl(47, 18%, 80%, 10%);
-    --secondary-color: hsl(167, 24%, 66%, 100%);
-    --values-card-bg-hoover: hsl(167, 24%, 66%, 10%);
-    --white: hsl(0, 0%, 100%, 100%);
-    --black: hsl(0, 0%, 0%, 100%);
-    --red: hsl(359, 100%, 61%, 100%);
+    --color-main-color: hsl(186, 100%, 13%, 100%);
+    --color-text-color: hsl(186, 100%, 13%, 80%);
+    --color-footer-labels: hsl(186, 100%, 13%, 60%);
+    --color-main-bg: hsl(187, 13%, 87%, 100%);
+    --color-secondary-bg: hsl(47, 18%, 80%, 100%);
+    --color-values-card-bg: hsl(47, 18%, 80%, 10%);
+    --color-secondary-color: hsl(167, 24%, 66%, 100%);
+    --color-values-card-bg-hoover: hsl(167, 24%, 66%, 10%);
+    --color-white: hsl(0, 0%, 100%, 100%);
+    --color-black: hsl(0, 0%, 0%, 100%);
+    --color-red: hsl(359, 100%, 61%, 100%);
     --main-gradient: linear-gradient(
         to right,
         hsl(52, 15%, 81%) 0%,
@@ -63,7 +63,7 @@
         font-weight: 500;
         line-height: 72%;
         letter-spacing: 0;
-        color: var(--main-color);
+        color: var(--color-main-color);
     }
     .subtitle {
         font-family: var(--cooper-hewitt);
@@ -71,7 +71,7 @@
         font-weight: 500;
         line-height: normal;
         letter-spacing: 0;
-        color: var(--main-color);
+        color: var(--color-main-color);
     }
     .text {
         font-family: var(--cooper-hewitt);
@@ -79,7 +79,7 @@
         font-weight: 375;
         line-height: normal;
         letter-spacing: 0;
-        color: var(--text-color);
+        color: var(--color-text-color);
     }
     .button {
         font-family: var(--keep-calm);
@@ -87,7 +87,7 @@
         font-weight: 500;
         line-height: normal;
         letter-spacing: 0;
-        color: var(--main-bg);
+        color: var(--color-main-bg);
     }
     .label {
         font-family: var(--cooper-hewitt);
@@ -95,11 +95,11 @@
         font-weight: 500;
         line-height: normal;
         letter-spacing: 0;
-        color: var(--main-color);
+        color: var(--color-main-color);
     }
 }
 @layer base {
     body {
-        background-color: var(--main-bg);
+        background-color: var(--color-main-bg);
     }
 }
