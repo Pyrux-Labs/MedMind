@@ -1,0 +1,168 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "news": "Noticias",
+    "about": "Sobre MedMind",
+    "contact": "Contacto"
+  },
+  "meta": {
+    "home": {
+      "title": "MedMind - Soluciones Lingüísticas Especializadas",
+      "description": "Traducción especializada en salud y educación. Garantizamos precisión clínica y cumplimiento normativo."
+    },
+    "about": {
+      "title": "Sobre MedMind - Traducciones Especializadas",
+      "description": "Conoce a MedMind y a las fundadoras detrás de nuestras traducciones conscientes en salud y educación."
+    },
+    "contact": {
+      "title": "Contacto - MedMind",
+      "description": "Póngase en contacto con MedMind para sus proyectos de traducción especializada."
+    },
+    "news": {
+      "title": "Noticias - MedMind",
+      "description": "Últimas novedades y actualizaciones de MedMind."
+    }
+  },
+  "hero": {
+    "title": "MedMind: soluciones lingüísticas especializadas",
+    "subtitle": "Cuando el mensaje es sensible, el lenguaje importa más.",
+    "cta": "Conversemos"
+  },
+  "health": {
+    "title": "Salud y bienestar",
+    "description": "Garantizamos la precisión clínica y el cumplimiento normativo a través de las fronteras. Tendemos puentes entre la ciencia compleja y la atención accesible al paciente.",
+    "items": [
+      "Antecedentes e informes médicos.",
+      "Documentación de ensayos clínicos.",
+      "Materiales educativos para pacientes.",
+      "Guías y formularios de seguros médicos."
+    ]
+  },
+  "education": {
+    "title": "Educación",
+    "description": "Potenciamos el aprendizaje global a través de la precisión lingüística. Adaptamos los contenidos educativos para que resulten accesibles para estudiantes de diversos orígenes culturales.",
+    "items": [
+      "Contenido pedagógico.",
+      "Programas educativos e informes académicos.",
+      "Cursos de aprendizaje electrónico.",
+      "Protocolos institucionales."
+    ]
+  },
+  "services": {
+    "title": "Servicios",
+    "items": [
+      "Traducción especializada de documentos inglés ⇄ español.",
+      "Revisión y control de calidad lingüística.",
+      "Posedición consciente de contenidos generados por IA o traducción automática.",
+      "Subtitulado y transcripción de contenidos audiovisuales.",
+      "Asesoramiento lingüístico para comunicaciones sensibles."
+    ]
+  },
+  "values": {
+    "title": "Nuestros valores",
+    "subtitle": "Buscamos la excelencia a través de la calidad humana.",
+    "description": "En MedMind, cada decisión lingüística tiene un fundamento, ya que somos conscientes del impacto de las palabras.",
+    "empathy": {
+      "title": "Empatía",
+      "description": "Conectamos con la intención detrás de cada palabra para preservar el tono humano."
+    },
+    "clarity": {
+      "title": "Claridad",
+      "description": "Facilitamos la comunicación a través de mensajes directos, comprensibles y efectivos."
+    }
+  },
+  "callToAction": {
+    "question": "¿Algún proyecto en mente?",
+    "cta": "Conversemos"
+  },
+  "footer": {
+    "sections": "Secciones",
+    "tagline": "MedMind es una aliada para traducciones conscientes enfocada en tender puentes lingüísticos con empatía, precisión y una visión profundamente humana.",
+    "email": "Correo electrónico",
+    "location": "Ubicación",
+    "country": "Argentina"
+  },
+  "news": {
+    "title": "Novedades",
+    "designOk": "Diseño ok",
+    "pagination": {
+      "next": "Siguiente"
+    }
+  },
+  "about": {
+    "title": "Sobre MedMind",
+    "intro": {
+      "description": "MedMind nace de la unión entre el conocimiento, la sensibilidad y la responsabilidad profesional.",
+      "purpose": "Es una marca creada para acompañar comunicaciones sensibles en contextos donde las palabras no son neutras y el lenguaje tiene impacto real en las personas."
+    },
+    "personality": {
+      "title": "Personalidad",
+      "description": "Comunica con calma, claridad y criterio, para reducir riesgos lingüísticos. Es precisa sin ser rígida, cercana sin ser informal y profesional sin frialdad."
+    },
+    "purpose": {
+      "title": "Propósito",
+      "description": "Humanizar la comunicación especializada en contextos sensibles para garantizar que cada mensaje conserve su sentido, su claridad y su impacto humano al pasar de un idioma a otro."
+    },
+    "mission": {
+      "title": "Misión",
+      "description": "Ayudar a profesionales e instituciones de salud y educación a comunicar de manera precisa, clara y sensible cuidando el impacto del lenguaje en cada etapa del proceso."
+    },
+    "vision": {
+      "title": "Visión",
+      "description": "Ser un referente en el sector y lograr reconocimiento por el criterio profesional, la calidad humana y la empatía frente a mensajes sensibles."
+    },
+    "founders": {
+      "title": "Fundadoras",
+      "guillermina": {
+        "name": "Guillermina Bassi",
+        "bio": "Es traductora e intérprete especializada en el ámbito médico y de las ciencias de la salud, con más de cinco años de experiencia trabajando con documentación técnica y regulada en contextos de alta responsabilidad.\n\nTiene una Maestría en Traducción Médico-Sanitaria, completada en la Universitat Jaume I, en España, y ha complementado su formación con estudios y capacitación continua en traducción médica y gestión de proyectos. A lo largo de su trayectoria ha trabajado con documentación farmacéutica, ensayos clínicos, certificados de análisis y textos científicos dirigidos tanto a profesionales como a pacientes.\n\nEn MedMind, Guillermina aporta solidez técnica, compromiso y una forma de trabajar serena y rigurosa, orientada a preservar el sentido y la claridad en cada proyecto."
+      },
+      "lucia": {
+        "name": "Lucía Biselli",
+        "bio": "Es traductora especializada en los ámbitos médico y de la salud mental, con más de seis años de experiencia trabajando en contextos sanitarios y educativos en los que la precisión y la sensibilidad son fundamentales.\n\nA lo largo de su trayectoria ha colaborado en proyectos vinculados a ensayos clínicos, documentación farmacéutica, dispositivos médicos, evaluaciones psicológicas y materiales educativos para pacientes y profesionales. También cuenta con formación en Psicología, lo que enriquece su mirada sobre la dimensión humana del lenguaje en contextos de salud mental y bienestar.\n\nEn MedMind, Lucía aporta criterio profesional, experiencia en procesos de revisión y calidad lingüística, y un compromiso profundo con una comunicación clara y respetuosa."
+      }
+    }
+  },
+  "contact": {
+    "title": "Su mensaje, en buenas manos",
+    "subtitle": "Cuéntenos los detalles de su proyecto y nos pondremos en contacto a la brevedad.",
+    "form": {
+      "name": {
+        "label": "Nombre y apellido",
+        "placeholder": "Ingrese su nombre completo"
+      },
+      "phone": {
+        "label": "Teléfono",
+        "placeholder": "Ingrese su teléfono"
+      },
+      "email": {
+        "label": "Correo electrónico",
+        "placeholder": "Ingrese su correo electrónico"
+      },
+      "country": {
+        "label": "País",
+        "placeholder": "Seleccione su país"
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Cuéntenos sobre su proyecto"
+      },
+      "submit": "Enviar"
+    },
+    "info": {
+      "title": "Contacto",
+      "email": "Correo electrónico",
+      "location": "Ubicación",
+      "country": "Argentina"
+    }
+  },
+  "cta": {
+    "letstalk": "Conversemos",
+    "submit": "Enviar",
+    "next": "Siguiente"
+  },
+  "languageSwitcher": {
+    "spanish": "Español",
+    "english": "English"
+  }
+}
