@@ -17,7 +17,7 @@
 }
 @font-face {
     font-family: "Keep Calm";
-    src: url("/fonts/Keep Calm Medium.woff2") format("woff2");
+    src: url("/fonts/Keep_Calm_Medium.woff2") format("woff2");
     font-weight: 500;
 }
 
@@ -52,9 +52,9 @@
         hsl(187, 13%, 87%, 20%) 0%,
         hsl(187, 13%, 87%, 100%) 100%
     );
-    --butler: "Butler", sans-serif;
-    --cooper-hewitt: "Cooper Hewitt", sans-serif;
-    --keep-calm: "Keep Calm", sans-serif;
+    --butler: "Butler";
+    --cooper-hewitt: "Cooper Hewitt";
+    --keep-calm: "Keep Calm";
 }
 
 @layer utilities {
@@ -100,6 +100,10 @@
     }
     .shadow-custom {
         box-shadow: var(--shadow-custom);
+    }
+    .bg-landing-overlay {
+        background-image:
+            var(--image-blur-landing-page), url("/landing_top_bg.JPG");
     }
 }
 @layer base {
