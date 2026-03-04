@@ -62,7 +62,7 @@
         font-family: var(--butler);
         font-size: 64px;
         font-weight: 500;
-        line-height: 72%;
+        line-height: 112.5%;
         letter-spacing: 0;
         color: var(--color-main-color);
     }
