@@ -16,7 +16,7 @@ const Content = ({ namespace, imageSrc, imageLeft = false }: ContentProps) => {
         <div className="flex flex-col justify-center h-full">
             <h1 className="main-title">{t("title")}</h1>
             <p className="text py-11">{t("description")}</p>
-            <div className="w-136 bg-white rounded-xl h-64 p-6 shadow-custom">
+            <div className="w-full bg-white rounded-xl h-64 p-6 shadow-custom">
                 {(t.raw("items") as string[]).map(
                     (item: string, index: number) => (
                         <div
@@ -50,7 +50,7 @@ const Content = ({ namespace, imageSrc, imageLeft = false }: ContentProps) => {
     );
 
     return (
-        <div className="my-19 flex h-136 gap-12">
+        <div className="my-35 flex h-136 gap-12 justify-between">
             {imageLeft ? imageBlock : textBlock}
             {imageLeft ? textBlock : imageBlock}
         </div>
