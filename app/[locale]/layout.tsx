@@ -50,6 +50,7 @@ export default async function LocaleLayout({
 
     return (
         <html lang={locale}>
+            {" "}
             <body className="overflow-x-hidden">
                 <NextIntlClientProvider messages={messages}>
                     <NavBar />
