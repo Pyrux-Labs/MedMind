@@ -50,7 +50,7 @@ const Content = ({ namespace, imageSrc, imageLeft = false }: ContentProps) => {
     );
 
     return (
-        <div className="my-35 flex h-136 gap-12 justify-between">
+        <div className="my-30 flex h-136 gap-12 justify-between">
             {imageLeft ? imageBlock : textBlock}
             {imageLeft ? textBlock : imageBlock}
         </div>

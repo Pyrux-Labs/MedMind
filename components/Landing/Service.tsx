@@ -7,7 +7,7 @@ const Service = () => {
     const t = useTranslations("services");
 
     return (
-        <div className="my-35 flex h-136 justify-between">
+        <div className="my-30 flex h-136 justify-between">
             <div className="flex flex-col justify-center h-full">
                 <h1 className="main-title mb-8">{t("title")}</h1>
                 <div className="w-180 bg-white rounded-xl h-112 p-3 shadow-custom">

@@ -103,7 +103,7 @@
     }
     .bg-landing-overlay {
         background-image:
-            var(--image-blur-landing-page), url("/landing_top_bg.JPG");
+            var(--image-blur-landing-page), url("/landing_values_1.jpg");
     }
 }
 @layer base {
