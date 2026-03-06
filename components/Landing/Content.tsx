@@ -16,12 +16,12 @@ const Content = ({ namespace, imageSrc, imageLeft = false }: ContentProps) => {
         <div className="flex flex-col justify-center h-full">
             <h1 className="main-title">{t("title")}</h1>
             <p className="text py-11">{t("description")}</p>
-            <div className="w-full bg-white rounded-xl h-64 p-6 shadow-custom">
+            <div className="bg-white rounded-xl p-6 shadow-custom">
                 {(t.raw("items") as string[]).map(
                     (item: string, index: number) => (
                         <div
                             key={index}
-                            className="flex border-b gap-4.5 w-full h-12 items-center border-secondary-color last:border-b-0"
+                            className="flex border-b gap-4.5 h-12 items-center border-secondary-color last:border-b-0"
                         >
                             <Image
                                 src="/landing_content_check.svg"

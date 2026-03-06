@@ -63,39 +63,36 @@
         font-size: 64px;
         font-weight: 500;
         line-height: 112.5%;
-        letter-spacing: 0;
         color: var(--color-main-color);
     }
     .subtitle {
         font-family: var(--cooper-hewitt);
         font-size: 24px;
         font-weight: 500;
-        line-height: normal;
-        letter-spacing: 0;
+        color: var(--color-main-color);
+    }
+    .contact_us {
+        font-family: var(--cooper-hewitt);
+        font-size: 32px;
+        font-weight: 500;
         color: var(--color-main-color);
     }
     .text {
         font-family: var(--cooper-hewitt);
         font-size: 20px;
         font-weight: 375;
-        line-height: normal;
-        letter-spacing: 0;
         color: var(--color-text-color);
     }
     .button {
         font-family: var(--keep-calm);
         font-size: 14px;
         font-weight: 500;
-        line-height: normal;
-        letter-spacing: 0;
         color: var(--color-main-bg);
     }
     .label {
         font-family: var(--cooper-hewitt);
         font-size: 14px;
         font-weight: 500;
-        line-height: normal;
-        letter-spacing: 0;
         color: var(--color-main-color);
     }
     .shadow-custom {
@@ -105,7 +102,25 @@
         background-image:
             var(--image-blur-landing-page), url("/landing_values_1.jpg");
     }
+    .hover-gradient-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background-image: var(--main-gradient);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        z-index: 0;
+    }
+    .hover-gradient-bg:hover::before {
+        opacity: 1;
+    }
+    .hover-gradient-bg > * {
+        position: relative;
+        z-index: 1;
+    }
 }
+
 @layer base {
     body {
         background-color: var(--color-main-bg);

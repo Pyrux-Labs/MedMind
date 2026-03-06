@@ -63,6 +63,7 @@ const Values = () => {
                             height={368}
                             width={276}
                             className="rounded-2xl shadow-custom object-cover h-92"
+                            sizes="(max-width: 768px) 100vw, 50vw"
                         />
                     </div>
                 ))}
