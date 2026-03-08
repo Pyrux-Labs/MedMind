@@ -1,11 +1,19 @@
 import "./globals.css";
+import { headers } from "next/headers";
+import { routing } from "@/i18n/routing";
 
-// Root layout is intentionally minimal.
-// The [locale] layout handles html, body, NavBar, Footer, and i18n.
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	return children;
+	// next-intl middleware sets this header
+	const headersList = await headers();
+	const locale = headersList.get("x-next-intl-locale") ?? routing.defaultLocale;
+
+	return (
+		<html lang={locale}>
+			<body>{children}</body>
+		</html>
+	);
 }

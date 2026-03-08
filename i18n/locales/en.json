@@ -86,6 +86,7 @@
     "title": "What's new",
     "designOk": "Design ok",
     "pagination": {
+      "prev": "Previous",
       "next": "Next"
     }
   },
