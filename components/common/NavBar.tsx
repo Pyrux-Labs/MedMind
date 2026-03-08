@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import LanguageDropdown from "../ui/LanguageDropdown";
+import LanguageDropdown from "./LanguageDropdown";
 import Image from "next/image";
 
 const NavBar = () => {

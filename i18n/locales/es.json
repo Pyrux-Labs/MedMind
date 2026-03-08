@@ -78,9 +78,11 @@
     "footer": {
         "sections": "Secciones",
         "tagline": "MedMind es una aliada para traducciones conscientes enfocada en tender puentes lingüísticos con empatía, precisión y una visión profundamente humana.",
-        "email": "Correo electrónico",
-        "location": "Ubicación",
-        "country": "Argentina"
+        "news": "Noticias",
+        "about": "Sobre MedMind",
+        "contact": "Contacto",
+        "rights": "© 2026 MedMind . Todos los derechos reservados.",
+        "sponsor": "Diseñado por"
     },
     "news": {
         "title": "Novedades",

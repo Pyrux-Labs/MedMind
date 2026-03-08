@@ -78,9 +78,11 @@
     "footer": {
         "sections": "Sections",
         "tagline": "MedMind is an ally for conscious translations focused on building linguistic bridges with empathy, precision, and a deeply human vision.",
-        "email": "Email",
-        "location": "Location",
-        "country": "Argentina"
+        "news": "News",
+        "about": "About MedMind",
+        "contact": "Contact",
+        "rights": "© 2026 MedMind. All rights reserved.",
+        "sponsor": "Designed by"
     },
     "news": {
         "title": "What's new",

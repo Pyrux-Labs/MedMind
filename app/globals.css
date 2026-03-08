@@ -41,6 +41,11 @@
         hsl(164, 17%, 68%) 66%,
         hsl(188, 40%, 18%) 100%
     );
+    --pyrux-gradient: linear-gradient(
+        to right,
+        hsl(20.921, 83%, 36%) 0%,
+        hsl(20.597, 81%, 52%) 100%
+    );
     --image-blur-abaut-us: linear-gradient(
         to bottom,
         hsl(187, 13%, 87%, 80%) 0%,
@@ -56,6 +61,9 @@
     --cooper-hewitt: "Cooper Hewitt";
     --keep-calm: "Keep Calm";
 }
+
+/* --hero-title-start: #a84510;
+	--hero-title-end: #e8641f; */
 
 @layer utilities {
     .main-title {
@@ -88,6 +96,12 @@
         font-size: 14px;
         font-weight: 500;
         color: var(--color-main-bg);
+    }
+    .text-pyrux-gradient {
+        background-image: var(--pyrux-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
     }
     .label {
         font-family: var(--cooper-hewitt);

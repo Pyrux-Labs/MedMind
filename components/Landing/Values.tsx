@@ -29,13 +29,14 @@ const Values = () => {
                                     src={`/landing_values_${iconIndex}.svg`}
                                     alt={`${key} icon`}
                                     fill
-                                    className="transition-opacity duration-200 group-hover:opacity-0"
+                                    className="absolute inset-0 object-contain transition-opacity duration-300 ease-in-out will-change-opacity opacity-100 group-hover:opacity-0"
                                 />
                                 <Image
                                     src={`/landing_values_${iconIndex}:hoover.svg`}
                                     alt={`${key} icon hover`}
                                     fill
-                                    className="opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                                    priority
+                                    className="absolute inset-0 object-contain transition-opacity duration-300 ease-in-out will-change-opacity opacity-0 group-hover:opacity-100"
                                 />
                             </div>
                             <div>

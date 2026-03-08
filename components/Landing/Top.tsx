@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import MainButton from "../ui/MainButton";
+import MainButton from "../common/MainButton";
 
 const Top = () => {
     const t = useTranslations("hero");
