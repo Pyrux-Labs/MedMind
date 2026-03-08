@@ -35,6 +35,7 @@ export interface Article {
 	updatedAt: string;
 	publishedAt: string;
 	cover: Cover | null;
+	localizations?: Array<{ slug: string; locale: string }>;
 }
 
 export interface StrapiResponse<T> {

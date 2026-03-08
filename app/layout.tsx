@@ -11,9 +11,5 @@ export default async function RootLayout({
 	const headersList = await headers();
 	const locale = headersList.get("x-next-intl-locale") ?? routing.defaultLocale;
 
-	return (
-		<html lang={locale}>
-			<body>{children}</body>
-		</html>
-	);
+	return children;
 }

@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import NavBar from "@/components/common/NavBar";
 import Footer from "@/components/common/Footer";
+import { ArticleLocaleProvider } from "@/components/common/ArticleLocaleContext";
 
 type Params = Promise<{ locale: string }>;
 
@@ -52,9 +53,11 @@ export default async function LocaleLayout({
 		<html lang={locale}>
 			<body className="overflow-x-hidden">
 				<NextIntlClientProvider messages={messages}>
-					<NavBar />
-					<main className="mx-[10%]">{children}</main>
-					<Footer />
+					<ArticleLocaleProvider>
+						<NavBar />
+						<main className="mx-[10%]">{children}</main>
+						<Footer />
+					</ArticleLocaleProvider>
 				</NextIntlClientProvider>
 			</body>
 		</html>

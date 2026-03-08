@@ -35,6 +35,8 @@ export async function fetchArticles(
 
 /**
  * Obtener un artículo individual por slug.
+ * Popula localizations para obtener el slug del mismo artículo en otros idiomas,
+ * lo que permite que el LanguageDropdown navegue a la URL correcta al cambiar de locale.
  */
 export async function fetchArticleBySlug(
 	slug: string,
@@ -42,17 +44,23 @@ export async function fetchArticleBySlug(
 ): Promise<Article | null> {
 	const params = new URLSearchParams({
 		locale,
-		populate: "cover",
+		"populate[0]": "cover",
+		"populate[1]": "localizations",
 		"filters[slug][$eq]": slug,
 	});
 
-	const res = await fetch(
-		getStrapiURL(`/api/articles?${params}`),
-		{ next: { revalidate: 60 } },
-	);
+	let res: Response;
+	try {
+		res = await fetch(
+			getStrapiURL(`/api/articles?${params}`),
+			{ next: { revalidate: 60 } },
+		);
+	} catch {
+		return null;
+	}
 
 	if (!res.ok) {
-		throw new Error(`Error ${res.status} al obtener artículo`);
+		return null;
 	}
 
 	const json = await res.json();
