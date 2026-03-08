@@ -1,18 +1,18 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import MainButton from "../ui/MainButton";
+import MainButton from "../common/MainButton";
 
 const Top = () => {
-	const t = useTranslations("hero");
+    const t = useTranslations("hero");
 
-	return (
-		<div>
-			<h1>{t("title")}</h1>
-			<p>{t("subtitle")}</p>
-			<MainButton label={t("cta")} />
-		</div>
-	);
+    return (
+        <header className="-mx-[12.5%] h-screen bg-landing-overlay bg-cover bg-center flex flex-col items-center justify-center">
+            <h1 className="main-title mx-71 text-center">{t("title")}</h1>
+            <h2 className="subtitle my-15">{t("subtitle")}</h2>
+            <MainButton label={t("cta")} />
+        </header>
+    );
 };
 
 export default Top;

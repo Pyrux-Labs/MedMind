@@ -17,7 +17,7 @@
 }
 @font-face {
     font-family: "Keep Calm";
-    src: url("/fonts/Keep Calm Medium.woff2") format("woff2");
+    src: url("/fonts/Keep_Calm_Medium.woff2") format("woff2");
     font-weight: 500;
 }
 
@@ -32,6 +32,7 @@
     --color-values-card-bg-hoover: hsl(167, 24%, 66%, 10%);
     --color-white: hsl(0, 0%, 100%, 100%);
     --color-black: hsl(0, 0%, 0%, 100%);
+    --shadow-custom: 0 0 30px -15px var(--color-black);
     --color-red: hsl(359, 100%, 61%, 100%);
     --main-gradient: linear-gradient(
         to right,
@@ -39,6 +40,11 @@
         hsl(192, 8%, 87%) 33%,
         hsl(164, 17%, 68%) 66%,
         hsl(188, 40%, 18%) 100%
+    );
+    --pyrux-gradient: linear-gradient(
+        to right,
+        hsl(20.921, 83%, 36%) 0%,
+        hsl(20.597, 81%, 52%) 100%
     );
     --image-blur-abaut-us: linear-gradient(
         to bottom,
@@ -51,53 +57,84 @@
         hsl(187, 13%, 87%, 20%) 0%,
         hsl(187, 13%, 87%, 100%) 100%
     );
-    --butler: "Butler", sans-serif;
-    --cooper-hewitt: "Cooper Hewitt", sans-serif;
-    --keep-calm: "Keep Calm", sans-serif;
+    --butler: "Butler";
+    --cooper-hewitt: "Cooper Hewitt";
+    --keep-calm: "Keep Calm";
 }
+
+/* --hero-title-start: #a84510;
+	--hero-title-end: #e8641f; */
 
 @layer utilities {
     .main-title {
         font-family: var(--butler);
         font-size: 64px;
         font-weight: 500;
-        line-height: 72%;
-        letter-spacing: 0;
+        line-height: 112.5%;
         color: var(--color-main-color);
     }
     .subtitle {
         font-family: var(--cooper-hewitt);
         font-size: 24px;
         font-weight: 500;
-        line-height: normal;
-        letter-spacing: 0;
+        color: var(--color-main-color);
+    }
+    .contact_us {
+        font-family: var(--cooper-hewitt);
+        font-size: 32px;
+        font-weight: 500;
         color: var(--color-main-color);
     }
     .text {
         font-family: var(--cooper-hewitt);
         font-size: 20px;
         font-weight: 375;
-        line-height: normal;
-        letter-spacing: 0;
         color: var(--color-text-color);
     }
     .button {
         font-family: var(--keep-calm);
         font-size: 14px;
         font-weight: 500;
-        line-height: normal;
-        letter-spacing: 0;
         color: var(--color-main-bg);
+    }
+    .text-pyrux-gradient {
+        background-image: var(--pyrux-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
     }
     .label {
         font-family: var(--cooper-hewitt);
         font-size: 14px;
         font-weight: 500;
-        line-height: normal;
-        letter-spacing: 0;
         color: var(--color-main-color);
     }
+    .shadow-custom {
+        box-shadow: var(--shadow-custom);
+    }
+    .bg-landing-overlay {
+        background-image:
+            var(--image-blur-landing-page), url("/landing_values_1.jpg");
+    }
+    .hover-gradient-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background-image: var(--main-gradient);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        z-index: 0;
+    }
+    .hover-gradient-bg:hover::before {
+        opacity: 1;
+    }
+    .hover-gradient-bg > * {
+        position: relative;
+        z-index: 1;
+    }
 }
+
 @layer base {
     body {
         background-color: var(--color-main-bg);

@@ -24,6 +24,9 @@ export async function generateMetadata({
 	return {
 		title: t("title"),
 		description: t("description"),
+		icons: {
+			icon: "/favicon.svg",
+		},
 	};
 }
 
@@ -46,10 +49,14 @@ export default async function LocaleLayout({
 	const messages = await getMessages();
 
 	return (
-		<NextIntlClientProvider messages={messages}>
-			<NavBar />
-			<main className="mx-30">{children}</main>
-			<Footer />
-		</NextIntlClientProvider>
+		<html lang={locale}>
+			<body className="overflow-x-hidden">
+				<NextIntlClientProvider messages={messages}>
+					<NavBar />
+					<main className="mx-[10%]">{children}</main>
+					<Footer />
+				</NextIntlClientProvider>
+			</body>
+		</html>
 	);
 }

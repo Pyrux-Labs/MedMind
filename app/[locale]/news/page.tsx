@@ -1,9 +1,9 @@
-import { setRequestLocale } from "next-intl/server";
 import { fetchArticles } from "@/lib/api/articles";
 import Card from "@/components/News/Card";
 import Pagination from "@/components/News/Pagination";
-
 const PAGE_SIZE = 9;
+import Title from "@/components/common/Title";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 type Params = Promise<{ locale: string }>;
 type SearchParams = Promise<{ page?: string }>;
@@ -21,10 +21,12 @@ export default async function NewsPage({
 
 	const page = Number(pageParam) > 0 ? Number(pageParam) : 1;
 	const { data: articles, meta } = await fetchArticles(locale, page, PAGE_SIZE);
+	const t = await getTranslations("news");
 	console.log(articles);
 
 	return (
 		<div className="container mx-auto px-4 py-8">
+			<Title text={t("title")} />
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{articles.map((article) => (
 					<Card key={article.id} article={article} locale={locale} />
