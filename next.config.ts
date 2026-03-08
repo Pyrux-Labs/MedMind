@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
     dangerouslyAllowLocalIP: true,
     remotePatterns: [
       {
+        protocol: 'https',
+        hostname: 'cms.medmind.com.ar', // Producción
+      },
+      {
         protocol: 'http',
         hostname: 'localhost',
         port: '1337',
