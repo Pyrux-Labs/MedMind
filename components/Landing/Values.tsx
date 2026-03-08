@@ -32,7 +32,7 @@ const Values = () => {
                                     className="absolute inset-0 object-contain transition-opacity duration-300 ease-in-out will-change-opacity opacity-100 group-hover:opacity-0"
                                 />
                                 <Image
-                                    src={`/landing_values_${iconIndex}:hoover.svg`}
+                                    src={`/landing_values_${iconIndex}_hoover.svg`}
                                     alt={`${key} icon hover`}
                                     fill
                                     priority
