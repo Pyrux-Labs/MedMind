@@ -1,16 +1,14 @@
 "use client";
+type TitleProps = {
+    text?: string;
+};
 
-import { useTranslations } from "next-intl";
-
-const Title = () => {
-	const t = useTranslations("contact");
-
-	return (
-		<div>
-			<h1>{t("title")}</h1>
-			<p>{t("subtitle")}</p>
-		</div>
-	);
+const Title = ({ text }: TitleProps) => {
+    return (
+        <h1 className="main-title my-30 underline underline-offset-15 decoration-secondary-color decoration-1">
+            {text}
+        </h1>
+    );
 };
 
 export default Title;
