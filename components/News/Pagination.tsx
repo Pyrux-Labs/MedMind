@@ -13,34 +13,40 @@ const Pagination = ({ page, pageCount }: PaginationProps) => {
 
 	if (pageCount <= 1) return null;
 
+	const pages = Array.from({ length: pageCount }, (_, i) => i + 1);
+
 	return (
-		<div className="flex items-center justify-center gap-6 mt-10">
+		<div className="flex items-center gap-3 justify-center my-30">
 			{page > 1 ? (
 				<Link
 					href={`?page=${page - 1}`}
-					className="px-4 py-2 border rounded hover:bg-gray-100 transition-colors">
-					{t("prev")}
+					className="label transition-colors duration-150 cursor-pointer">
+					{t("prev").toUpperCase()}
 				</Link>
 			) : (
-				<span className="px-4 py-2 border rounded text-gray-300 cursor-not-allowed">
-					{t("prev")}
-				</span>
+				<span className="label opacity-70">{t("prev").toUpperCase()}</span>
 			)}
 
-			<span className="text-sm text-gray-500">
-				{page} / {pageCount}
-			</span>
+			{pages.map((p) => (
+				<Link
+					key={p}
+					href={`?page=${p}`}
+					aria-current={p === page ? "page" : undefined}
+					className={`label w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-150 ${
+						p === page ? "bg-secondary-bg" : "hover:bg-secondary-bg/50"
+					}`}>
+					{p}
+				</Link>
+			))}
 
 			{page < pageCount ? (
 				<Link
 					href={`?page=${page + 1}`}
-					className="px-4 py-2 border rounded hover:bg-gray-100 transition-colors">
-					{t("next")}
+					className="label transition-colors duration-150 cursor-pointer">
+					{t("next").toUpperCase()}
 				</Link>
 			) : (
-				<span className="px-4 py-2 border rounded text-gray-300 cursor-not-allowed">
-					{t("next")}
-				</span>
+				<span className="label opacity-70">{t("next").toUpperCase()}</span>
 			)}
 		</div>
 	);

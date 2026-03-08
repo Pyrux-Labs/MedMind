@@ -18,8 +18,8 @@ const Card = ({ article, locale }: CardProps) => {
 	return (
 		<Link
 			href={`/news/${article.slug}`}
-			className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-			<div className="relative w-full aspect-[372/286] bg-gray-200">
+			className="w-93 h-143 shadow-custom rounded-sm flex flex-col gap-4.5 overflow-hidden">
+			<div className="relative w-full h-1/2">
 				{coverUrl ? (
 					<Image
 						src={coverUrl}
@@ -29,21 +29,19 @@ const Card = ({ article, locale }: CardProps) => {
 						sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 372px"
 					/>
 				) : (
-					<div className="flex items-center justify-center h-full">
+					<div className="flex items-center justify-center h-full bg-gray-200">
 						<span className="text-gray-400 text-4xl">📰</span>
 					</div>
 				)}
 			</div>
-
-			<div className="p-4">
-				<h2 className="text-xl font-semibold mb-2">{article.title}</h2>
-				<p className="text-sm text-gray-500">
-					{article.author} ·{" "}
-					{new Date(article.publishedAt).toLocaleDateString(
-						locale === "es" ? "es-AR" : "en-US",
-					)}
-				</p>
-			</div>
+			<h2 className="mx-5 subtitle line-clamp-2">{article.title}</h2>
+			<p className="mx-5 text line-clamp-4">{article.content}</p>
+			<p className="mx-5 label">
+				{new Date(article.publishedAt).toLocaleDateString(
+					locale === "es" ? "es-AR" : "en-US",
+					{ day: "numeric", month: "long", year: "numeric" },
+				)}
+			</p>
 		</Link>
 	);
 };
