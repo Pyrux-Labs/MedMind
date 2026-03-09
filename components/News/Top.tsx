@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getStrapiMediaURL } from "@/lib/strapi";
-import type { Article } from "@/types/article";
+import type { Article } from "@/lib/api/articles";
 
 interface TopProps {
     article: Article;
@@ -8,29 +8,23 @@ interface TopProps {
 }
 
 const Top = ({ article, locale }: TopProps) => {
-    const imageUrl = getStrapiMediaURL(
-        article.cover?.formats?.xlarge?.url ||
-            article.cover?.formats?.large?.url ||
-            article.cover?.url,
-    );
+    const imageUrl = getStrapiMediaURL(article.cover?.url);
 
     return (
-        <div>
-            <p>{article.title}</p>
-            {imageUrl && (
-                <Image
-                    src={imageUrl}
-                    alt={article.cover?.alternativeText || article.title}
-                    width={1440}
-                    height={303}
-                />
-            )}
-            <p>
+        <header
+            className="-mx-[12.5%] h-70 bg-cover bg-center flex flex-col items-center justify-center gap-4"
+            style={{
+                backgroundImage: `var(--image-blur-abaut-us), url(${imageUrl})`,
+            }}
+        >
+            <h1 className="main-title mx-44 text-center">{article.title}</h1>
+            <h2 className="subtitle">
                 {new Date(article.publishedAt).toLocaleDateString(
                     locale === "es" ? "es-AR" : "en-US",
+                    { day: "numeric", month: "long", year: "numeric" },
                 )}
-            </p>
-        </div>
+            </h2>
+        </header>
     );
 };
 

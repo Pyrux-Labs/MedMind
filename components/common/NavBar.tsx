@@ -1,21 +1,23 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import LanguageDropdown from "./LanguageDropdown";
 import Image from "next/image";
+import Link from "next/link";
 
 const NavBar = () => {
     const t = useTranslations("nav");
 
     return (
         <aside className="w-full h-15 flex items-center justify-between px-13 border border-secondary-bg shadow-custom">
-            <Image
-                src="/icons/logo.svg"
-                alt="MedMind logo"
-                width={177}
-                height={62}
-            />
+            <Link href="/">
+                <Image
+                    src="/icons/logo.svg"
+                    alt="MedMind logo"
+                    width={177}
+                    height={62}
+                />
+            </Link>
             <div className="flex items-center gap-8 w-fit h-full">
                 <nav className="flex w-fit h-full justify-between gap-17 label items-center">
                     <Link href="/">{t("home").toUpperCase()}</Link>

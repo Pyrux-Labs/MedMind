@@ -1,5 +1,29 @@
-import type { Article, StrapiResponse } from "@/types/article";
 import { getStrapiURL } from "@/lib/strapi";
+
+export interface ArticleCover {
+    url: string;
+    alternativeText: string | null;
+}
+
+export interface Article {
+    id: number;
+    title: string;
+    slug: string;
+    content: string;
+    publishedAt: string;
+    author?: string;
+    cover?: ArticleCover;
+}
+
+export interface StrapiResponse<T> {
+    data: T;
+    meta: {
+        pagination: {
+            page: number;
+            pageCount: number;
+        };
+    };
+}
 
 /**
  * Obtener lista de artículos con paginación.
@@ -9,28 +33,28 @@ import { getStrapiURL } from "@/lib/strapi";
  * @param pageSize - Artículos por página (default: 9)
  */
 export async function fetchArticles(
-	locale: string = "es",
-	page: number = 1,
-	pageSize: number = 9,
+    locale: string = "es",
+    page: number = 1,
+    pageSize: number = 9,
 ): Promise<StrapiResponse<Article[]>> {
-	const params = new URLSearchParams({
-		locale,
-		populate: "cover",
-		sort: "publishedAt:desc",
-		"pagination[page]": String(page),
-		"pagination[pageSize]": String(pageSize),
-		publicationState: "live",
-	});
+    const params = new URLSearchParams({
+        locale,
+        populate: "cover",
+        sort: "publishedAt:desc",
+        "pagination[page]": String(page),
+        "pagination[pageSize]": String(pageSize),
+        publicationState: "live",
+    });
 
-	const res = await fetch(getStrapiURL(`/api/articles?${params}`), {
-		next: { revalidate: 60 },
-	});
+    const res = await fetch(getStrapiURL(`/api/articles?${params}`), {
+        next: { revalidate: 60 },
+    });
 
-	if (!res.ok) {
-		throw new Error(`Error ${res.status} al obtener artículos`);
-	}
+    if (!res.ok) {
+        throw new Error(`Error ${res.status} al obtener artículos`);
+    }
 
-	return res.json();
+    return res.json();
 }
 
 /**
@@ -39,30 +63,28 @@ export async function fetchArticles(
  * lo que permite que el LanguageDropdown navegue a la URL correcta al cambiar de locale.
  */
 export async function fetchArticleBySlug(
-	slug: string,
-	locale: string = "es",
+    slug: string,
+    locale: string = "es",
 ): Promise<Article | null> {
-	const params = new URLSearchParams({
-		locale,
-		"populate[0]": "cover",
-		"populate[1]": "localizations",
-		"filters[slug][$eq]": slug,
-	});
+    const params = new URLSearchParams({
+        locale,
+        populate: "cover",
+        "filters[slug][$eq]": slug,
+    });
 
-	let res: Response;
-	try {
-		res = await fetch(
-			getStrapiURL(`/api/articles?${params}`),
-			{ next: { revalidate: 60 } },
-		);
-	} catch {
-		return null;
-	}
+    let res: Response;
+    try {
+        res = await fetch(getStrapiURL(`/api/articles?${params}`), {
+            next: { revalidate: 60 },
+        });
+    } catch {
+        return null;
+    }
 
-	if (!res.ok) {
-		return null;
-	}
+    if (!res.ok) {
+        return null;
+    }
 
-	const json = await res.json();
-	return json.data?.[0] ?? null;
+    const json = await res.json();
+    return json.data?.[0] ?? null;
 }

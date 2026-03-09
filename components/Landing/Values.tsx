@@ -11,7 +11,7 @@ const Values = () => {
     return (
         <div className="my-30 flex h-120 gap-12 justify-between">
             <div className="w-1/2 flex flex-col justify-center h-full gap-6">
-                <h1 className="main-title">{t("title")}</h1>
+                <h2 className="main-title">{t("title")}</h2>
                 <p className="text my-3.5">
                     {t("subtitle")}
                     <br />

@@ -9,7 +9,7 @@ const Service = () => {
     return (
         <div className="my-30 flex h-136 gap-12 justify-between">
             <div className="flex flex-col justify-center h-full w-2/3">
-                <h1 className="main-title mb-8">{t("title")}</h1>
+                <h2 className="main-title mb-8">{t("title")}</h2>
                 <div className="bg-white rounded-xl p-3 shadow-custom w-fit">
                     {(t.raw("items") as string[]).map(
                         (item: string, index: number) => {

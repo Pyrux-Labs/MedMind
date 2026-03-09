@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { getStrapiMediaURL } from "@/lib/strapi";
-import type { Article } from "@/types/article";
+import type { Article } from "@/lib/api/articles";
 
 interface CardProps {
     article: Article;
@@ -9,11 +9,7 @@ interface CardProps {
 }
 
 const Card = ({ article, locale }: CardProps) => {
-    const coverUrl = getStrapiMediaURL(
-        article.cover?.formats?.medium?.url ||
-            article.cover?.formats?.small?.url ||
-            article.cover?.url,
-    );
+    const coverUrl = getStrapiMediaURL(article.cover?.url);
 
     return (
         <Link
