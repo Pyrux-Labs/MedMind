@@ -26,13 +26,13 @@ const Values = () => {
                         >
                             <div className="relative w-10 h-10 shrink-0">
                                 <Image
-                                    src={`/landing_values_${iconIndex}.svg`}
+                                    src={`/landing/values/icon-${iconIndex}.svg`}
                                     alt={`${key} icon`}
                                     fill
                                     className="absolute inset-0 object-contain transition-opacity duration-300 ease-in-out will-change-opacity opacity-100 group-hover:opacity-0"
                                 />
                                 <Image
-                                    src={`/landing_values_${iconIndex}_hoover.svg`}
+                                    src={`/landing/values/icon-${iconIndex}-hover.svg`}
                                     alt={`${key} icon hover`}
                                     fill
                                     priority
@@ -59,7 +59,7 @@ const Values = () => {
                         className={`w-1/2 h-full flex py-5 ${align}`}
                     >
                         <Image
-                            src={`/landing_values_${index + 1}.jpg`}
+                            src={`/landing/values/image-${index + 1}.jpg`}
                             alt={`values image ${index + 1}`}
                             height={368}
                             width={276}

@@ -16,11 +16,11 @@ export default async function Home({ params }: { params: Params }) {
             <Top />
             <Content
                 namespace="health"
-                imageSrc="/landing_content_health.jpg"
+                imageSrc="/landing/content/health.jpg"
             />
             <Content
                 namespace="education"
-                imageSrc="/landing_content_education.jpg"
+                imageSrc="/landing/content/education.jpg"
                 imageLeft
             />
             <Service />

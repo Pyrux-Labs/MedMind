@@ -114,7 +114,7 @@
     }
     .bg-landing-overlay {
         background-image:
-            var(--image-blur-landing-page), url("/landing_values_1.jpg");
+            var(--image-blur-landing-page), url("/landing/values/image-1.jpg");
     }
     .hover-gradient-bg::before {
         content: "";

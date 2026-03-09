@@ -87,6 +87,7 @@
     "news": {
         "title": "Novedades",
         "pagination": {
+            "prev": "Anterior",
             "next": "Siguiente"
         }
     },

@@ -13,7 +13,7 @@ const Service = () => {
                 <div className="bg-white rounded-xl p-3 shadow-custom w-fit">
                     {(t.raw("items") as string[]).map(
                         (item: string, index: number) => {
-                            const iconSrc = `/landing_services_${(index % 5) + 1}.svg`;
+                            const iconSrc = `/landing/services/icon-${(index % 5) + 1}.svg`;
 
                             return (
                                 <div
@@ -22,7 +22,7 @@ const Service = () => {
                                 >
                                     <Image
                                         src={iconSrc}
-                                        alt={`landing_services_${(index % 5) + 1}`}
+                                        alt={`service icon ${(index % 5) + 1}`}
                                         height={44}
                                         width={44}
                                     />
@@ -35,8 +35,8 @@ const Service = () => {
             </div>
             <div className="w-1/3 justify-center flex">
                 <Image
-                    src="/landing_services.jpg"
-                    alt="landing_services"
+                    src="/landing/services/bg.jpg"
+                    alt="services"
                     height={314}
                     width={560}
                     className="object-cover rounded-2xl shadow-custom relative w-78.5 shrink-0"

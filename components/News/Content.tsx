@@ -1,11 +1,15 @@
-"use client";
+import type { Article } from "@/types/article";
 
-import { useTranslations } from "next-intl";
+interface ContentProps {
+    article: Article;
+}
 
-const Content = () => {
-	const t = useTranslations("news");
-
-	return <div>{t("designOk")}</div>;
+const Content = ({ article }: ContentProps) => {
+    return (
+        <div>
+            <div dangerouslySetInnerHTML={{ __html: article.content }} />
+        </div>
+    );
 };
 
 export default Content;

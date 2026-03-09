@@ -11,8 +11,8 @@ function Footer() {
             <div className="flex gap-87">
                 <div className="flex flex-col gap-2">
                     <Image
-                        src="/mainLogo.svg"
-                        alt="mainLogo"
+                        src="/icons/logo.svg"
+                        alt="MedMind logo"
                         width={235}
                         height={81}
                         className="-ml-3"
@@ -20,20 +20,20 @@ function Footer() {
                     <p className="text text-footer-labels!">{t("tagline")}</p>
                     <div className="flex gap-4">
                         <Image
-                            src="/linkedIn_social_button.svg"
-                            alt="linkedIn_social_button"
+                            src="/social/linkedin.svg"
+                            alt="LinkedIn"
                             height={28}
                             width={28}
                         />
                         <Image
-                            src="/instagram_social_button.svg"
-                            alt="instagram_social_button"
+                            src="/social/instagram.svg"
+                            alt="Instagram"
                             height={28}
                             width={28}
                         />
                         <Image
-                            src="/email_social_button.svg"
-                            alt="email_social_button"
+                            src="/social/email.svg"
+                            alt="Email"
                             height={28}
                             width={28}
                         />

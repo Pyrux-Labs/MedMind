@@ -10,7 +10,12 @@ const NavBar = () => {
 
     return (
         <aside className="w-full h-15 flex items-center justify-between px-13 border border-secondary-bg shadow-custom">
-            <Image src="/mainLogo.svg" alt="mainLogo" width={177} height={62} />
+            <Image
+                src="/icons/logo.svg"
+                alt="MedMind logo"
+                width={177}
+                height={62}
+            />
             <div className="flex items-center gap-8 w-fit h-full">
                 <nav className="flex w-fit h-full justify-between gap-17 label items-center">
                     <Link href="/">{t("home").toUpperCase()}</Link>

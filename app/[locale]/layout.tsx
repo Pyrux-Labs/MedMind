@@ -11,55 +11,55 @@ import { ArticleLocaleProvider } from "@/components/common/ArticleLocaleContext"
 type Params = Promise<{ locale: string }>;
 
 export function generateStaticParams() {
-	return routing.locales.map((locale) => ({ locale }));
+    return routing.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
-	params,
+    params,
 }: {
-	params: Params;
+    params: Params;
 }): Promise<Metadata> {
-	const { locale } = await params;
-	const t = await getTranslations({ locale, namespace: "meta.home" });
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: "meta.home" });
 
-	return {
-		title: t("title"),
-		description: t("description"),
-		icons: {
-			icon: "/favicon.svg",
-		},
-	};
+    return {
+        title: t("title"),
+        description: t("description"),
+        icons: {
+            icon: "/icons/favicon.svg",
+        },
+    };
 }
 
 export default async function LocaleLayout({
-	children,
-	params,
+    children,
+    params,
 }: {
-	children: React.ReactNode;
-	params: Params;
+    children: React.ReactNode;
+    params: Params;
 }) {
-	const { locale } = await params;
+    const { locale } = await params;
 
-	// Validate that the locale is supported
-	if (!routing.locales.includes(locale as "es" | "en")) {
-		notFound();
-	}
+    // Validate that the locale is supported
+    if (!routing.locales.includes(locale as "es" | "en")) {
+        notFound();
+    }
 
-	setRequestLocale(locale);
+    setRequestLocale(locale);
 
-	const messages = await getMessages();
+    const messages = await getMessages();
 
-	return (
-		<html lang={locale}>
-			<body className="overflow-x-hidden">
-				<NextIntlClientProvider messages={messages}>
-					<ArticleLocaleProvider>
-						<NavBar />
-						<main className="mx-[10%]">{children}</main>
-						<Footer />
-					</ArticleLocaleProvider>
-				</NextIntlClientProvider>
-			</body>
-		</html>
-	);
+    return (
+        <html lang={locale}>
+            <body className="overflow-x-hidden">
+                <NextIntlClientProvider messages={messages}>
+                    <ArticleLocaleProvider>
+                        <NavBar />
+                        <main className="mx-[10%]">{children}</main>
+                        <Footer />
+                    </ArticleLocaleProvider>
+                </NextIntlClientProvider>
+            </body>
+        </html>
+    );
 }

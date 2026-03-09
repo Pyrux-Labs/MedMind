@@ -24,8 +24,8 @@ const Content = ({ namespace, imageSrc, imageLeft = false }: ContentProps) => {
                             className="flex border-b gap-4.5 h-12 items-center border-secondary-color last:border-b-0"
                         >
                             <Image
-                                src="/landing_content_check.svg"
-                                alt="landing_content_check"
+                                src="/landing/content/check.svg"
+                                alt="check"
                                 height={19.5}
                                 width={19.5}
                             />
