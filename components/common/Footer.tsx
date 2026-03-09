@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 
 function Footer() {
     const t = useTranslations("footer");
@@ -41,15 +42,21 @@ function Footer() {
                 </div>
                 <div className="flex flex-col gap-4.5 mr-50">
                     <h2 className="subtitle">{t("sections")}</h2>
-                    <label className="label text-footer-labels!">
+                    <Link href="/" className="label text-footer-labels!">
+                        {t("home")}
+                    </Link>
+                    <Link href="/news" className="label text-footer-labels!">
                         {t("news")}
-                    </label>
-                    <label className="label text-footer-labels! whitespace-nowrap">
+                    </Link>
+                    <Link
+                        href="/about"
+                        className="label text-footer-labels! whitespace-nowrap"
+                    >
                         {t("about")}
-                    </label>
-                    <label className="label text-footer-labels!">
+                    </Link>
+                    <Link href="/contact" className="label text-footer-labels!">
                         {t("contact")}
-                    </label>
+                    </Link>
                 </div>
             </div>
             <div className="mx-45 py-4 mt-4 border-t flex justify-between border-secondary-bg">
