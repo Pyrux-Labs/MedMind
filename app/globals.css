@@ -116,6 +116,9 @@
         background-image:
             var(--image-blur-landing-page), url("/landing/values/image-1.jpg");
     }
+    .bg-abaut-overlay {
+        background-image: var(--image-blur-abaut-us), url("/abaut/top/bg.png");
+    }
     .hover-gradient-bg::before {
         content: "";
         position: absolute;
