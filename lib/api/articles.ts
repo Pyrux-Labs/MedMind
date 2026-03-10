@@ -6,10 +6,12 @@ export interface ArticleCover {
 }
 
 export interface ArticleAuthor {
-    avatar: string;
     fullname: string;
+    avatar: {
+        url: string;
+        alternativeText: string | null;
+    } | null;
 }
-
 export interface Article {
     id: number;
     title: string;
@@ -42,15 +44,15 @@ export async function fetchArticles(
     page: number = 1,
     pageSize: number = 9,
 ): Promise<StrapiResponse<Article[]>> {
-    const params = new URLSearchParams({
-        locale,
-        populate: "cover",
-        sort: "publishedAt:desc",
-        "pagination[page]": String(page),
-        "pagination[pageSize]": String(pageSize),
-        publicationState: "live",
-    });
-
+  const params = new URLSearchParams({
+    locale,
+    "populate[cover]": "*",
+    "populate[author][populate][avatar]": "*",
+    sort: "publishedAt:desc",
+    "pagination[page]": String(page),
+    "pagination[pageSize]": String(pageSize),
+    publicationState: "live",
+});
     const res = await fetch(getStrapiURL(`/api/articles?${params}`), {
         next: { revalidate: 60 },
     });
