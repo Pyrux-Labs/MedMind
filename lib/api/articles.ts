@@ -5,13 +5,18 @@ export interface ArticleCover {
     alternativeText: string | null;
 }
 
+export interface ArticleAuthor {
+    avatar: string;
+    fullname: string;
+}
+
 export interface Article {
     id: number;
     title: string;
     slug: string;
     content: string;
     publishedAt: string;
-    author?: string;
+    author?: ArticleAuthor;
     cover?: ArticleCover;
 }
 
@@ -68,7 +73,9 @@ export async function fetchArticleBySlug(
 ): Promise<Article | null> {
     const params = new URLSearchParams({
         locale,
-        populate: "cover",
+        "populate[0]": "cover",
+        "populate[1]": "author",
+        "populate[2]": "author.avatar",
         "filters[slug][$eq]": slug,
     });
 

@@ -6,14 +6,14 @@ import Form from "@/components/ContactUs/Form";
 type Params = Promise<{ locale: string }>;
 
 export default async function ContactPage({ params }: { params: Params }) {
-	const { locale } = await params;
-	setRequestLocale(locale);
+    const { locale } = await params;
+    setRequestLocale(locale);
 
-	return (
-		<div>
-			<Title />
-			<Form />
-			<Footer />
-		</div>
-	);
+    return (
+        <div>
+            <Title />
+            <Form />
+            <Footer />
+        </div>
+    );
 }
