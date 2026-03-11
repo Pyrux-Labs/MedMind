@@ -44,21 +44,24 @@ export async function fetchArticles(
     page: number = 1,
     pageSize: number = 9,
 ): Promise<StrapiResponse<Article[]>> {
-  const params = new URLSearchParams({
-    locale,
-    "populate[cover]": "*",
-    "populate[author][populate][avatar]": "*",
-    sort: "publishedAt:desc",
-    "pagination[page]": String(page),
-    "pagination[pageSize]": String(pageSize),
-    publicationState: "live",
-});
+    const params = new URLSearchParams({
+        locale,
+        "populate[cover][fields][0]": "url",
+        "populate[cover][fields][1]": "alternativeText",
+        "populate[author][fields][0]": "fullname",
+        "populate[author][populate][avatar][fields][0]": "url",
+        "populate[author][populate][avatar][fields][1]": "alternativeText",
+        sort: "publishedAt:desc",
+        "pagination[page]": String(page),
+        "pagination[pageSize]": String(pageSize),
+    });
     const res = await fetch(getStrapiURL(`/api/articles?${params}`), {
         next: { revalidate: 60 },
     });
 
     if (!res.ok) {
-        throw new Error(`Error ${res.status} al obtener artículos`);
+        const body = await res.text().catch(() => "");
+        throw new Error(`Error ${res.status} al obtener artículos: ${body}`);
     }
 
     return res.json();
@@ -75,9 +78,11 @@ export async function fetchArticleBySlug(
 ): Promise<Article | null> {
     const params = new URLSearchParams({
         locale,
-        "populate[0]": "cover",
-        "populate[1]": "author",
-        "populate[2]": "author.avatar",
+        "populate[cover][fields][0]": "url",
+        "populate[cover][fields][1]": "alternativeText",
+        "populate[author][fields][0]": "fullname",
+        "populate[author][populate][avatar][fields][0]": "url",
+        "populate[author][populate][avatar][fields][1]": "alternativeText",
         "filters[slug][$eq]": slug,
     });
 
