@@ -126,6 +126,9 @@
             }
         }
     },
+    "common": {
+        "emailCopied": "Email copiado al portapapeles"
+    },
     "contact": {
         "title": "Su mensaje, en buenas manos",
         "subtitle": "Cuéntenos los detalles de su proyecto y nos pondremos en contacto a la brevedad.",

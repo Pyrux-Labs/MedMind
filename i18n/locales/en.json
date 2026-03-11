@@ -126,6 +126,9 @@
             }
         }
     },
+    "common": {
+        "emailCopied": "Email copied to clipboard"
+    },
     "contact": {
         "title": "Leave your message in good hands",
         "subtitle": "Tell us the details of your project and we will contact you shortly.",

@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import SocialButton from "./SocialButton";
 
 function Footer() {
     const t = useTranslations("footer");
@@ -20,23 +21,17 @@ function Footer() {
                     />
                     <p className="text text-footer-labels!">{t("tagline")}</p>
                     <div className="flex gap-4">
-                        <Image
+                        <SocialButton
                             src="/social/linkedin.svg"
-                            alt="LinkedIn"
-                            height={28}
-                            width={28}
+                            href="https://www.linkedin.com/in/medmind-linguistic-solutions"
                         />
-                        <Image
+                        <SocialButton
                             src="/social/instagram.svg"
-                            alt="Instagram"
-                            height={28}
-                            width={28}
+                            href="https://www.instagram.com/medmindls"
                         />
-                        <Image
+                        <SocialButton
                             src="/social/email.svg"
-                            alt="Email"
-                            height={28}
-                            width={28}
+                            email="pyrux@pyrux.com.ar"
                         />
                     </div>
                 </div>

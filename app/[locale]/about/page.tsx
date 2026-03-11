@@ -15,7 +15,7 @@ export default async function AboutPage({ params }: { params: Params }) {
         <div>
             <Top />
             <CardsContainer />
-            <Title text={t("title")} align="center" />
+            <Title text={t("title")} align="center" noMargin={false} />
             <Content />
         </div>
     );

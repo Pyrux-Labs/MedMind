@@ -11,18 +11,20 @@ const Content = () => {
             <Founder
                 name={t("guillermina.name")}
                 bio={t("guillermina.bio")}
-                imageSrc={"/test.jpeg"}
+                imageSrc={"/abaut/content/test.jpeg"}
                 email={"pyrux@pyrux.com.ar"}
                 linkedIn={
                     "https://www.linkedin.com/in/guillermina-bassi-65908b195/"
                 }
+                className="items-end text-right"
             />
             <Founder
                 name={t("lucia.name")}
                 bio={t("lucia.bio")}
-                imageSrc={"/test.jpeg"}
+                imageSrc={"/abaut/content/lulabiselli.jpeg"}
                 email={"pyrux@pyrux.com.ar"}
                 linkedIn={"https://www.linkedin.com/in/luc%C3%ADabiselli/"}
+                className="mt-15"
             />
         </div>
     );

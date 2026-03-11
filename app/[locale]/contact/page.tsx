@@ -11,7 +11,7 @@ export default async function ContactPage({ params }: { params: Params }) {
 
     return (
         <div>
-            <Title />
+            <Title noMargin={false} />
             <Form />
             <Footer />
         </div>
