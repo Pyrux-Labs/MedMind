@@ -30,7 +30,7 @@ export default async function NewsPage({
 
     return (
         <div>
-            <Title text={t("title")} />
+            <Title text={t("title")} align="left" />
             <div className="grid grid-cols-3 justify-items-center gap-10">
                 {articles.map((article) => (
                     <Card key={article.id} article={article} locale={locale} />
