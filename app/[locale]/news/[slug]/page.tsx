@@ -7,6 +7,7 @@ import Top from "@/components/News/Top";
 import Content from "@/components/News/Content";
 import Footer from "@/components/News/Footer";
 import FullBleed from "@/components/common/FullBleed";
+import { SyncArticleLocaleMap } from "@/components/common/ArticleLocaleContext";
 
 const BASE_URL = "https://www.medmindls.com";
 type Params = Promise<{ locale: string; slug: string }>;
@@ -93,8 +94,21 @@ export default async function ArticlePage({ params }: { params: Params }) {
 		notFound();
 	}
 
+	// Build slug mapping for language switching
+	const slugMap: Record<string, string> = {
+		[locale]: slug, // Current locale and slug
+	};
+
+	// Add localized slugs from API
+	if (article.localizations) {
+		article.localizations.forEach((loc) => {
+			slugMap[loc.locale] = loc.slug;
+		});
+	}
+
 	return (
 		<div>
+			<SyncArticleLocaleMap slugMap={slugMap} />
 			<ArticleJsonLd article={article} locale={locale} slug={slug} />
 			<FullBleed>
 				<Top article={article} locale={locale} />

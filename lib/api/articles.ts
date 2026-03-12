@@ -12,6 +12,11 @@ export interface ArticleAuthor {
         alternativeText: string | null;
     } | null;
 }
+export interface ArticleLocalization {
+    slug: string;
+    locale: string;
+}
+
 export interface Article {
     id: number;
     title: string;
@@ -20,6 +25,7 @@ export interface Article {
     publishedAt: string;
     author?: ArticleAuthor;
     cover?: ArticleCover;
+    localizations?: ArticleLocalization[];
 }
 
 export interface StrapiResponse<T> {
@@ -83,6 +89,8 @@ export async function fetchArticleBySlug(
         "populate[author][fields][0]": "fullname",
         "populate[author][populate][avatar][fields][0]": "url",
         "populate[author][populate][avatar][fields][1]": "alternativeText",
+        "populate[localizations][fields][0]": "slug",
+        "populate[localizations][fields][1]": "locale",
         "filters[slug][$eq]": slug,
     });
 
