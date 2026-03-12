@@ -26,7 +26,7 @@ const Title = ({
             >
                 {text}
             </h1>
-            {subtitle && <p className="subtitle mt-4">{subtitle}</p>}
+            {subtitle && <p className="subtitle mt-11">{subtitle}</p>}
         </div>
     );
 };

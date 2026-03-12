@@ -32,7 +32,7 @@ function Footer() {
                         />
                         <SocialButton
                             src="/social/email.svg"
-                            email="pyrux@pyrux.com.ar"
+                            email="info@medmindls.com"
                         />
                     </div>
                 </div>

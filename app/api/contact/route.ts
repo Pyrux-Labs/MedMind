@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
             replyTo: email,
             subject: `New contact from ${name}`,
             html: `
-                <h2>New contact form submission</h2>
+                <h2>Nuevo formulario!</h2>
                 <p><strong>Name:</strong> ${name}</p>
                 <p><strong>Phone:</strong> ${phone}</p>
                 <p><strong>Email:</strong> ${email}</p>
