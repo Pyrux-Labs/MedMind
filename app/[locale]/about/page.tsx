@@ -4,44 +4,47 @@ import CardsContainer from "@/components/AboutUs/CardsContainer";
 import Content from "@/components/AboutUs/Content";
 import Top from "@/components/AboutUs/Top";
 import Title from "@/components/common/Title";
+import FullBleed from "@/components/common/FullBleed";
 
 const BASE_URL = "https://www.medmindls.com";
 type Params = Promise<{ locale: string }>;
 
 export async function generateMetadata({
-    params,
+	params,
 }: {
-    params: Params;
+	params: Params;
 }): Promise<Metadata> {
-    const { locale } = await params;
-    const t = await getTranslations({ locale, namespace: "meta.about" });
-    const otherLocale = locale === "es" ? "en" : "es";
-    return {
-        title: t("title"),
-        description: t("description"),
-        alternates: {
-            canonical: `${BASE_URL}/${locale}/about`,
-            languages: { [otherLocale]: `${BASE_URL}/${otherLocale}/about` },
-        },
-        openGraph: {
-            title: t("title"),
-            description: t("description"),
-            url: `${BASE_URL}/${locale}/about`,
-        },
-    };
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: "meta.about" });
+	const otherLocale = locale === "es" ? "en" : "es";
+	return {
+		title: t("title"),
+		description: t("description"),
+		alternates: {
+			canonical: `${BASE_URL}/${locale}/about`,
+			languages: { [otherLocale]: `${BASE_URL}/${otherLocale}/about` },
+		},
+		openGraph: {
+			title: t("title"),
+			description: t("description"),
+			url: `${BASE_URL}/${locale}/about`,
+		},
+	};
 }
 
 export default async function AboutPage({ params }: { params: Params }) {
-    const { locale } = await params;
-    setRequestLocale(locale);
-    const t = await getTranslations("about.founders");
+	const { locale } = await params;
+	setRequestLocale(locale);
+	const t = await getTranslations("about.founders");
 
-    return (
-        <div>
-            <Top />
-            <CardsContainer />
-            <Title text={t("title")} align="center" noMargin={false} />
-            <Content />
-        </div>
-    );
+	return (
+		<div>
+			<FullBleed>
+				<Top />
+			</FullBleed>
+			<CardsContainer />
+			<Title text={t("title")} align="center" noMargin={false} />
+			<Content />
+		</div>
+	);
 }

@@ -5,52 +5,52 @@ import Content from "@/components/Landing/Content";
 import Service from "@/components/Landing/Service";
 import Top from "@/components/Landing/Top";
 import Values from "@/components/Landing/Values";
+import FullBleed from "@/components/common/FullBleed";
 
 const BASE_URL = "https://www.medmindls.com";
 type Params = Promise<{ locale: string }>;
 
 export async function generateMetadata({
-    params,
+	params,
 }: {
-    params: Params;
+	params: Params;
 }): Promise<Metadata> {
-    const { locale } = await params;
-    const t = await getTranslations({ locale, namespace: "meta.home" });
-    const otherLocale = locale === "es" ? "en" : "es";
-    return {
-        title: t("title"),
-        description: t("description"),
-        alternates: {
-            canonical: `${BASE_URL}/${locale}`,
-            languages: { [otherLocale]: `${BASE_URL}/${otherLocale}` },
-        },
-        openGraph: {
-            title: t("title"),
-            description: t("description"),
-            url: `${BASE_URL}/${locale}`,
-        },
-    };
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: "meta.home" });
+	const otherLocale = locale === "es" ? "en" : "es";
+	return {
+		title: t("title"),
+		description: t("description"),
+		alternates: {
+			canonical: `${BASE_URL}/${locale}`,
+			languages: { [otherLocale]: `${BASE_URL}/${otherLocale}` },
+		},
+		openGraph: {
+			title: t("title"),
+			description: t("description"),
+			url: `${BASE_URL}/${locale}`,
+		},
+	};
 }
 
 export default async function Home({ params }: { params: Params }) {
-    const { locale } = await params;
-    setRequestLocale(locale);
+	const { locale } = await params;
+	setRequestLocale(locale);
 
-    return (
-        <div>
-            <Top />
-            <Content
-                namespace="health"
-                imageSrc="/landing/content/health.jpg"
-            />
-            <Content
-                namespace="education"
-                imageSrc="/landing/content/education.jpg"
-                imageLeft
-            />
-            <Service />
-            <Values />
-            <Contact />
-        </div>
-    );
+	return (
+		<div>
+			<FullBleed>
+				<Top />
+			</FullBleed>
+			<Content namespace="health" imageSrc="/landing/content/health.jpg" />
+			<Content
+				namespace="education"
+				imageSrc="/landing/content/education.jpg"
+				imageLeft
+			/>
+			<Service />
+			<Values />
+			<Contact />
+		</div>
+	);
 }
