@@ -40,6 +40,16 @@ const LanguageDropdown = () => {
                 <div
                     className="h-6.5 px-3 flex items-center justify-between cursor-pointer"
                     onClick={toggleOpen}
+                    role="button"
+                    aria-expanded={open}
+                    aria-label="Select language"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            toggleOpen();
+                        }
+                    }}
                 >
                     <img
                         src="/icons/language.svg"

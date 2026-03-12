@@ -7,20 +7,20 @@
     },
     "meta": {
         "home": {
-            "title": "MedMind",
-            "description": "The human side of translation."
+            "title": "MedMind — Specialized Medical & Educational Translation",
+            "description": "MedMind offers specialized medical and educational translation services between English and Spanish. Professional linguistic solutions with human sensitivity."
         },
         "about": {
-            "title": "MedMind About Us",
-            "description": "The human side of translation."
+            "title": "About MedMind — Our Story & Team",
+            "description": "Meet the founders of MedMind – specialized translators with over 5 years of experience in medical and educational documentation."
         },
         "contact": {
-            "title": "MedMind Contact",
-            "description": "The human side of translation."
+            "title": "Contact MedMind — Get in Touch",
+            "description": "Contact MedMind for professional medical and educational translation services. English and Spanish. Let us help with your project."
         },
         "news": {
-            "title": "MedMind News",
-            "description": "The human side of translation."
+            "title": "MedMind News — Insights on Medical Translation",
+            "description": "Latest insights on medical translation, educational linguistics, and specialized language services by MedMind."
         }
     },
     "hero": {
@@ -176,5 +176,15 @@
     "languageSwitcher": {
         "spanish": "Español",
         "english": "English"
+    },
+    "notFound": {
+        "title": "Page not found",
+        "description": "The page you are looking for does not exist or has been moved.",
+        "cta": "Back to home"
+    },
+    "error": {
+        "title": "Something went wrong",
+        "description": "An unexpected error occurred. Please try again.",
+        "cta": "Try again"
     }
 }

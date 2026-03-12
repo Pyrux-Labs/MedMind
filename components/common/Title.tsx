@@ -1,4 +1,7 @@
 "use client";
+
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+
 type TitleProps = {
     text?: string;
     subtitle?: string;
@@ -12,6 +15,7 @@ const Title = ({
     align = "left",
     noMargin = false,
 }: TitleProps) => {
+    const { ref, isVisible } = useScrollReveal<HTMLDivElement>();
     const alignClass =
         align === "center"
             ? "text-center mx-auto"
@@ -20,13 +24,16 @@ const Title = ({
               : "text-left";
 
     return (
-        <div className={`${noMargin ? "mb-7" : "my-30"} ${alignClass}`}>
+        <div
+            ref={ref}
+            className={`${noMargin ? "mb-7" : "my-16 md:my-30"} ${alignClass} fade-up ${isVisible ? "revealed" : ""}`}
+        >
             <h1
                 className={`main-title underline underline-offset-15 decoration-secondary-color decoration-1`}
             >
                 {text}
             </h1>
-            {subtitle && <p className="subtitle mt-11">{subtitle}</p>}
+            {subtitle && <p className="subtitle mt-6 md:mt-11">{subtitle}</p>}
         </div>
     );
 };

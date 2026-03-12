@@ -4,21 +4,25 @@
     font-family: "Butler";
     src: url("/fonts/Butler-Medium.woff2") format("woff2");
     font-weight: 500;
+    font-display: swap;
 }
 @font-face {
     font-family: "Cooper Hewitt";
     src: url("/fonts/CooperHewitt-Medium.woff2") format("woff2");
     font-weight: 500;
+    font-display: swap;
 }
 @font-face {
     font-family: "Cooper Hewitt";
     src: url("/fonts/CooperHewitt-Book.woff2") format("woff2");
     font-weight: 375;
+    font-display: swap;
 }
 @font-face {
-    font-family: "Keep Calm";
-    src: url("/fonts/Keep_Calm_Medium.woff2") format("woff2");
-    font-weight: 500;
+    font-family: "Nunito Sans";
+    src: url("/fonts/NunitoSans-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-display: swap;
 }
 
 @theme {
@@ -46,7 +50,7 @@
         hsl(20.921, 83%, 36%) 0%,
         hsl(20.597, 81%, 52%) 100%
     );
-    --image-blur-abaut-us: linear-gradient(
+    --image-blur-about-us: linear-gradient(
         to bottom,
         hsl(187, 13%, 87%, 80%) 0%,
         hsl(187, 13%, 87%, 50%) 50%,
@@ -59,7 +63,7 @@
     );
     --butler: "Butler";
     --cooper-hewitt: "Cooper Hewitt";
-    --keep-calm: "Keep Calm";
+    --keep-calm: "Nunito Sans";
 }
 
 /* --hero-title-start: #a84510;
@@ -68,26 +72,26 @@
 @layer utilities {
     .main-title {
         font-family: var(--butler);
-        font-size: 64px;
+        font-size: clamp(28px, 5vw, 64px);
         font-weight: 500;
         line-height: 112.5%;
         color: var(--color-main-color);
     }
     .subtitle {
         font-family: var(--cooper-hewitt);
-        font-size: 24px;
+        font-size: clamp(16px, 2.5vw, 24px);
         font-weight: 500;
         color: var(--color-main-color);
     }
     .contact_us {
         font-family: var(--cooper-hewitt);
-        font-size: 32px;
+        font-size: clamp(20px, 3vw, 32px);
         font-weight: 500;
         color: var(--color-main-color);
     }
     .text {
         font-family: var(--cooper-hewitt);
-        font-size: 20px;
+        font-size: clamp(15px, 1.8vw, 20px);
         font-weight: 375;
         color: var(--color-text-color);
     }
@@ -116,8 +120,8 @@
         background-image:
             var(--image-blur-landing-page), url("/landing/values/image-1.jpg");
     }
-    .bg-abaut-overlay {
-        background-image: var(--image-blur-abaut-us), url("/abaut/top/bg.png");
+    .bg-about-overlay {
+        background-image: var(--image-blur-about-us), url("/about/top/bg.webp");
     }
     .hover-gradient-bg::before {
         content: "";
@@ -165,4 +169,113 @@
 
 .animate-toast-slide {
     animation: toast-slide 3.2s ease forwards;
+}
+
+/* Scroll reveal animations */
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition:
+        opacity 800ms ease-out,
+        transform 800ms ease-out;
+}
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition:
+        opacity 800ms ease-out,
+        transform 800ms ease-out;
+}
+.slide-in-left.revealed,
+.slide-in-right.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 700ms ease-out,
+        transform 700ms ease-out;
+}
+.fade-up.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 600ms ease-out;
+}
+.fade-in.revealed {
+    opacity: 1;
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.95);
+    transition:
+        opacity 700ms ease-out,
+        transform 700ms ease-out;
+}
+.scale-in.revealed {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Page transition */
+@keyframes page-in {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animate-page-in {
+    animation: page-in 0.4s ease-out;
+}
+
+/* Hero entrance animations */
+@keyframes hero-title {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes hero-fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hero-title {
+    animation: hero-title 800ms ease-out 200ms both;
+}
+.hero-subtitle {
+    animation: hero-fade 700ms ease-out 500ms both;
+}
+.hero-cta {
+    animation: hero-fade 700ms ease-out 800ms both;
+}
+
+/* Stagger delays for groups */
+.reveal-delay-1 {
+    transition-delay: 150ms;
+}
+.reveal-delay-2 {
+    transition-delay: 300ms;
+}
+.reveal-delay-3 {
+    transition-delay: 450ms;
 }

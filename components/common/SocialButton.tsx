@@ -15,6 +15,8 @@ const SocialButton = ({ src, href, email }: SocialButtonProps) => {
     const t = useTranslations("common");
     const [showToast, setShowToast] = useState(false);
 
+    const iconName = src.split("/").pop()?.replace(".svg", "") || "social";
+
     const image = <Image src={src} alt="" height={28} width={28} />;
 
     const handleEmailClick = () => {
@@ -30,7 +32,8 @@ const SocialButton = ({ src, href, email }: SocialButtonProps) => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer"
+                aria-label={`Visit MedMind on ${iconName}`}
+                className="cursor-pointer hover:opacity-70 transition-opacity duration-200"
             >
                 {image}
             </a>
@@ -41,7 +44,8 @@ const SocialButton = ({ src, href, email }: SocialButtonProps) => {
         <>
             <button
                 onClick={handleEmailClick}
-                className="cursor-pointer bg-transparent border-none p-0"
+                aria-label={`Copy email: ${email}`}
+                className="cursor-pointer bg-transparent border-none p-0 hover:opacity-70 transition-opacity duration-200"
             >
                 {image}
             </button>

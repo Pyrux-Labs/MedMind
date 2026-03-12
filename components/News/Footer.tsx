@@ -8,10 +8,6 @@ interface FooterProps {
 }
 
 const Footer = ({ article }: FooterProps) => {
-    console.log(article);
-    console.log(article.author?.avatar?.url);
-    console.log(article.author?.fullname);
-
     if (!article.author || !article.author.avatar) return null;
 
     return (

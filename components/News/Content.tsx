@@ -31,7 +31,7 @@ const headingComponents = {
 
 const Content = ({ article }: ContentProps) => {
     return (
-        <div className="my-30">
+        <div className="my-10 md:my-20 lg:my-30 overflow-hidden break-words">
             <ReactMarkdown components={headingComponents}>
                 {article.content}
             </ReactMarkdown>

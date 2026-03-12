@@ -7,20 +7,20 @@
     },
     "meta": {
         "home": {
-            "title": "MedMind",
-            "description": "El lado humano de la traducción."
+            "title": "MedMind — Traducción Médica y Educativa Especializada",
+            "description": "MedMind ofrece servicios especializados de traducción médica y educativa entre inglés y español. Soluciones lingüísticas profesionales con sensibilidad humana."
         },
         "about": {
-            "title": "MedMind Sobre Nosotros",
-            "description": "El lado humano de la traducción."
+            "title": "Sobre MedMind — Nuestra Historia y Equipo",
+            "description": "Conozca a las fundadoras de MedMind: traductoras especializadas con más de 5 años de experiencia en documentación médica y educativa."
         },
         "contact": {
-            "title": "MedMind Contacto",
-            "description": "El lado humano de la traducción."
+            "title": "Contacto MedMind — Escríbanos",
+            "description": "Contacte a MedMind para servicios profesionales de traducción médica y educativa. Inglés y español. Cuéntenos sobre su proyecto."
         },
         "news": {
-            "title": "MedMind Noticias",
-            "description": "El lado humano de la traducción."
+            "title": "Noticias MedMind — Novedades en Traducción Médica",
+            "description": "Últimas novedades sobre traducción médica, lingüística educativa y servicios de lenguaje especializado de MedMind."
         }
     },
     "hero": {
@@ -176,5 +176,15 @@
     "languageSwitcher": {
         "spanish": "Español",
         "english": "English"
+    },
+    "notFound": {
+        "title": "Página no encontrada",
+        "description": "La página que busca no existe o ha sido movida.",
+        "cta": "Volver al inicio"
+    },
+    "error": {
+        "title": "Algo salió mal",
+        "description": "Ocurrió un error inesperado. Por favor, intente nuevamente.",
+        "cta": "Reintentar"
     }
 }

@@ -55,10 +55,10 @@ const Form = ({ locale }: { locale: string }) => {
     return (
         <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-7.5 items-center rounded-lg shadow-custom p-9.5 py-15 mx-[10%]"
+            className="flex flex-col gap-5 md:gap-7.5 items-center rounded-lg shadow-custom p-5 py-8 md:p-9.5 md:py-15 mx-0 md:mx-[5%] lg:mx-[10%]"
         >
             {/* Row 1: Name + Phone */}
-            <div className="flex gap-6 w-full">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6 w-full">
                 <div className="flex flex-col gap-2 w-full">
                     <label className="label">{t("name.label")}</label>
                     <input
@@ -66,7 +66,7 @@ const Form = ({ locale }: { locale: string }) => {
                         type="text"
                         required
                         placeholder={t("name.placeholder")}
-                        className="w-full rounded-lg p-2 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color"
+                        className="w-full rounded-lg p-2 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color transition-shadow duration-200"
                     />
                 </div>
                 <div className="flex flex-col gap-2 w-full">
@@ -75,13 +75,13 @@ const Form = ({ locale }: { locale: string }) => {
                         name="phone"
                         type="tel"
                         placeholder={t("phone.placeholder")}
-                        className="w-full rounded-lg p-2 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color"
+                        className="w-full rounded-lg p-2 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color transition-shadow duration-200"
                     />
                 </div>
             </div>
 
             {/* Row 2: Email + Country */}
-            <div className="flex gap-6 w-full">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6 w-full">
                 <div className="flex flex-col gap-2 w-full">
                     <label className="label">{t("email.label")}</label>
                     <input
@@ -89,7 +89,7 @@ const Form = ({ locale }: { locale: string }) => {
                         type="email"
                         required
                         placeholder={t("email.placeholder")}
-                        className="w-full rounded-lg p-2 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color"
+                        className="w-full rounded-lg p-2 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color transition-shadow duration-200"
                     />
                 </div>
                 <div className="flex flex-col gap-2 w-full">
@@ -97,7 +97,7 @@ const Form = ({ locale }: { locale: string }) => {
                     <select
                         name="country"
                         defaultValue=""
-                        className="w-full rounded-lg p-2 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color"
+                        className="w-full rounded-lg p-2 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color transition-shadow duration-200"
                     >
                         <option value="" disabled>
                             {t("country.placeholder")}
@@ -119,23 +119,23 @@ const Form = ({ locale }: { locale: string }) => {
                     required
                     rows={5}
                     placeholder={t("message.placeholder")}
-                    className="w-full rounded-lg p-2 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color"
+                    className="w-full rounded-lg p-2 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color transition-shadow duration-200"
                 />
             </div>
 
-            {/* Row 4: File upload */}
-            <div className="flex gap-6 w-full items-end">
+            {/* Row 4: File upload + Submit */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full items-start sm:items-end">
                 <div className="flex flex-col gap-2 w-full">
                     <label className="label">{t("file.label")}</label>
                     <div className="flex items-center gap-3">
                         <button
                             type="button"
                             onClick={() => fileInputRef.current?.click()}
-                            className="border-2 border-secondary-color label rounded-xl px-4 py-2 hover:bg-secondary-color hover:text-white transition-colors cursor-pointer"
+                            className="border-2 border-secondary-color label rounded-xl px-4 py-2 hover:bg-secondary-color hover:text-white transition-colors duration-200 cursor-pointer shrink-0"
                         >
                             {t("file.button")}
                         </button>
-                        <span className="label">
+                        <span className="label truncate">
                             {fileName || t("file.noFile")}
                         </span>
                         <input
@@ -151,9 +151,13 @@ const Form = ({ locale }: { locale: string }) => {
                 <button
                     type="submit"
                     disabled={status === "loading"}
-                    className="button w-27 h-10 rounded-4xl bg-main-color flex items-center justify-center hover:border hover:border-main-color hover:bg-main-bg group-hover:border group-hover:border-main-color group-hover:bg-main-bg transition-colors duration-200"
+                    className="button w-full sm:w-40 h-12 rounded-4xl bg-main-color flex items-center justify-center hover:border hover:border-main-color hover:bg-main-bg transition-all duration-300 ease-out disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer shrink-0"
                 >
-                    {status === "loading" ? "..." : t("submit").toUpperCase()}
+                    {status === "loading" ? (
+                        <div className="w-5 h-5 border-2 border-main-bg border-t-transparent rounded-full animate-spin" />
+                    ) : (
+                        t("submit").toUpperCase()
+                    )}
                 </button>
             </div>
 

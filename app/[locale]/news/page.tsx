@@ -1,13 +1,38 @@
+import type { Metadata } from "next";
 import { fetchArticles } from "@/lib/api/articles";
 import Card from "@/components/News/Card";
 import Pagination from "@/components/News/Pagination";
 import Title from "@/components/common/Title";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
+const BASE_URL = "https://www.medmindls.com";
 const PAGE_SIZE = 6;
 
 type Params = Promise<{ locale: string }>;
 type SearchParams = Promise<{ page?: string }>;
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Params;
+}): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: "meta.news" });
+    const otherLocale = locale === "es" ? "en" : "es";
+    return {
+        title: t("title"),
+        description: t("description"),
+        alternates: {
+            canonical: `${BASE_URL}/${locale}/news`,
+            languages: { [otherLocale]: `${BASE_URL}/${otherLocale}/news` },
+        },
+        openGraph: {
+            title: t("title"),
+            description: t("description"),
+            url: `${BASE_URL}/${locale}/news`,
+        },
+    };
+}
 
 export default async function NewsPage({
     params,
@@ -31,7 +56,7 @@ export default async function NewsPage({
     return (
         <div>
             <Title text={t("title")} align="left" noMargin={false} />
-            <div className="grid grid-cols-3 justify-items-center gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center gap-6 lg:gap-10">
                 {articles.map((article) => (
                     <Card key={article.id} article={article} locale={locale} />
                 ))}

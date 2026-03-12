@@ -2,25 +2,27 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import SocialButton from "./SocialButton";
 
 function Footer() {
     const t = useTranslations("footer");
 
     return (
-        <div className="mt-30 px-[10%] pt-4 border-secondary-color border-t">
-            <div className="flex gap-87">
-                <div className="flex flex-col gap-2">
+        <div className="mt-16 md:mt-30 px-5 md:px-8 lg:px-[10%] pt-4 border-secondary-color border-t">
+            <div className="flex flex-col md:flex-row gap-8 md:gap-16 lg:gap-24">
+                <div className="flex flex-col gap-4 items-center md:items-start">
                     <Image
                         src="/icons/logo.svg"
                         alt="MedMind logo"
                         width={235}
                         height={81}
-                        className="-ml-3"
+                        className="md:-ml-3"
                         style={{ height: "auto" }}
                     />
-                    <p className="text text-footer-labels!">{t("tagline")}</p>
+                    <p className="text text-footer-labels! text-center md:text-left">
+                        {t("tagline")}
+                    </p>
                     <div className="flex gap-4">
                         <SocialButton
                             src="/social/linkedin.svg"
@@ -36,26 +38,35 @@ function Footer() {
                         />
                     </div>
                 </div>
-                <div className="flex flex-col gap-4.5 mr-50">
+                <div className="flex flex-col gap-4.5 items-center md:items-start">
                     <h2 className="subtitle">{t("sections")}</h2>
-                    <Link href="/" className="label text-footer-labels!">
+                    <Link
+                        href="/"
+                        className="label text-footer-labels! hover:opacity-80 transition-opacity"
+                    >
                         {t("home")}
                     </Link>
-                    <Link href="/news" className="label text-footer-labels!">
+                    <Link
+                        href="/news"
+                        className="label text-footer-labels! hover:opacity-80 transition-opacity"
+                    >
                         {t("news")}
                     </Link>
                     <Link
                         href="/about"
-                        className="label text-footer-labels! whitespace-nowrap"
+                        className="label text-footer-labels! whitespace-nowrap hover:opacity-80 transition-opacity"
                     >
                         {t("about")}
                     </Link>
-                    <Link href="/contact" className="label text-footer-labels!">
+                    <Link
+                        href="/contact"
+                        className="label text-footer-labels! hover:opacity-80 transition-opacity"
+                    >
                         {t("contact")}
                     </Link>
                 </div>
             </div>
-            <div className="mx-45 py-4 mt-4 border-t flex justify-between border-secondary-bg">
+            <div className="py-4 mt-4 border-t flex flex-col md:flex-row justify-between items-center gap-2 border-secondary-bg">
                 <p className="label text-footer-labels!">{t("rights")}</p>
                 <p className="label text-footer-labels! flex items-center">
                     {t("sponsor")}
