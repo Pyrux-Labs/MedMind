@@ -153,7 +153,14 @@
                 "label": "Message",
                 "placeholder": "Tell us about your project"
             },
-            "submit": "Submit"
+            "file": {
+                "label": "Attach a file",
+                "button": "Choose file",
+                "noFile": "No file selected"
+            },
+            "submit": "Submit",
+            "success": "Your message was sent successfully. We will contact you shortly.",
+            "error": "There was an error sending your message. Please try again."
         },
         "info": {
             "title": "Contact",

@@ -153,7 +153,14 @@
                 "label": "Mensaje",
                 "placeholder": "Cuéntenos sobre su proyecto"
             },
-            "submit": "Enviar"
+            "file": {
+                "label": "Adjunte un archivo",
+                "button": "Elegir archivo",
+                "noFile": "Ningún archivo seleccionado"
+            },
+            "submit": "Enviar",
+            "success": "Su mensaje fue enviado correctamente. Nos pondremos en contacto a la brevedad.",
+            "error": "Hubo un error al enviar su mensaje. Por favor, intente nuevamente."
         },
         "info": {
             "title": "Contacto",

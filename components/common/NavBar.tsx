@@ -16,6 +16,7 @@ const NavBar = () => {
                     alt="MedMind logo"
                     width={177}
                     height={62}
+                    style={{ height: "auto" }}
                 />
             </Link>
             <div className="flex items-center gap-8 w-fit h-full">

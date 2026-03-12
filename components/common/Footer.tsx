@@ -18,6 +18,7 @@ function Footer() {
                         width={235}
                         height={81}
                         className="-ml-3"
+                        style={{ height: "auto" }}
                     />
                     <p className="text text-footer-labels!">{t("tagline")}</p>
                     <div className="flex gap-4">

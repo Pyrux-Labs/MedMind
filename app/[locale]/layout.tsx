@@ -51,7 +51,7 @@ export default async function LocaleLayout({
 
     return (
         <html lang={locale}>
-            <body className="overflow-x-hidden">
+            <body className="overflow-x-hidden" suppressHydrationWarning>
                 <NextIntlClientProvider messages={messages}>
                     <ArticleLocaleProvider>
                         <NavBar />
