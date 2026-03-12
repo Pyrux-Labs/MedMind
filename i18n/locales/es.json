@@ -163,8 +163,7 @@
             "error": "Hubo un error al enviar su mensaje. Por favor, intente nuevamente."
         },
         "info": {
-            "title": "Contacto",
-            "email": "Correo electrónico",
+            "contact": "Contacto",
             "location": "Ubicación",
             "country": "Argentina"
         }
