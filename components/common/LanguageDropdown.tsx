@@ -38,7 +38,7 @@ const LanguageDropdown = () => {
 				className={`w-23 border border-main-color bg-main-bg transition-all duration-150
                 ${open ? "rounded-t-xl border-b-transparent" : "rounded-xl"}`}>
 				<div
-					className="h-6.5 px-3 flex items-center justify-between cursor-pointer"
+					className="h-6.5 px-3 flex items-center justify-between cursor-pointer leading-none"
 					onClick={toggleOpen}
 					role="button"
 					aria-expanded={open}

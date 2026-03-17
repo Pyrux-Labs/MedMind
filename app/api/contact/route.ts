@@ -18,6 +18,12 @@ export async function POST(req: NextRequest) {
     try {
         const formData = await req.formData();
 
+        // Honeypot: si este campo tiene valor, es un bot
+        const honeypot = (formData.get("honeypot") as string | null) ?? "";
+        if (honeypot) {
+            return NextResponse.json({ ok: true }); // respuesta falsa para no alertar al bot
+        }
+
         const name = (formData.get("name") as string | null)?.trim() ?? "";
         const phone = (formData.get("phone") as string | null)?.trim() ?? "";
         const email = (formData.get("email") as string | null)?.trim() ?? "";

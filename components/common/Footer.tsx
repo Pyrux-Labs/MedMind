@@ -34,11 +34,11 @@ function Footer() {
                         />
                         <SocialButton
                             src="/social/email.svg"
-                            email="info@medmindls.com"
+                            email="info@medmind.com.ar"
                         />
                     </div>
                 </div>
-                <div className="flex flex-col gap-4.5 items-center md:items-start">
+                <div className="hidden md:flex flex-col gap-4.5 items-center md:items-start">
                     <h2 className="subtitle">{t("sections")}</h2>
                     <Link
                         href="/"
@@ -72,6 +72,8 @@ function Footer() {
                     {t("sponsor")}
                     <a
                         href="https://www.pyrux.com.ar/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-pyrux-gradient ml-1 underline decoration-hsl(20.597, 81%, 52%) underline-offset-2"
                         title="Pyrux"
                     >

@@ -28,7 +28,7 @@
 @theme {
     --color-main-color: hsl(186, 100%, 13%, 100%);
     --color-text-color: hsl(186, 100%, 13%, 80%);
-    --color-footer-labels: hsl(186, 100%, 13%, 60%);
+    --color-footer-labels: hsl(186, 100%, 13%, 75%);
     --color-main-bg: hsl(187, 13%, 87%, 100%);
     --color-secondary-bg: hsl(47, 18%, 80%, 100%);
     --color-values-card-bg: hsl(47, 18%, 80%, 10%);
@@ -97,8 +97,8 @@
     }
     .button {
         font-family: var(--keep-calm);
-        font-size: 14px;
-        font-weight: 500;
+        font-size: 16px;
+        font-weight: 700;
         color: var(--color-main-bg);
     }
     .text-pyrux-gradient {

@@ -5,7 +5,8 @@ import Pagination from "@/components/News/Pagination";
 import Title from "@/components/common/Title";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-const BASE_URL = "https://www.medmindls.com";
+const BASE_URL =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.medmind.com.ar";
 const PAGE_SIZE = 6;
 
 type Params = Promise<{ locale: string }>;
@@ -56,7 +57,7 @@ export default async function NewsPage({
     return (
         <div>
             <Title text={t("title")} align="left" noMargin={false} />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center gap-6 lg:gap-10">
+            <div className="grid grid-cols-2 lg:grid-cols-3 justify-items-center gap-4 sm:gap-6 lg:gap-10">
                 {articles.map((article) => (
                     <Card key={article.id} article={article} locale={locale} />
                 ))}

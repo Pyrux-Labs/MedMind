@@ -57,25 +57,37 @@ const Form = ({ locale }: { locale: string }) => {
             onSubmit={handleSubmit}
             className="flex flex-col gap-5 md:gap-7.5 items-center rounded-lg shadow-custom p-5 py-8 md:p-9.5 md:py-15 mx-0 md:mx-[5%] lg:mx-[10%]"
         >
+            {/* Honeypot: campo invisible para atrapar bots */}
+            <input
+                name="honeypot"
+                type="text"
+                style={{ display: "none" }}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+            />
+
             {/* Row 1: Name + Phone */}
             <div className="flex flex-col md:flex-row gap-4 md:gap-6 w-full">
                 <div className="flex flex-col gap-2 w-full">
-                    <label className="label">{t("name.label")}</label>
+                    <label className="label" htmlFor="name">{t("name.label")}</label>
                     <input
+                        id="name"
                         name="name"
                         type="text"
                         required
                         placeholder={t("name.placeholder")}
-                        className="w-full rounded-lg p-2 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color transition-shadow duration-200"
+                        className="w-full rounded-lg px-3 py-2.5 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color transition-shadow duration-200"
                     />
                 </div>
                 <div className="flex flex-col gap-2 w-full">
-                    <label className="label">{t("phone.label")}</label>
+                    <label className="label" htmlFor="phone">{t("phone.label")}</label>
                     <input
+                        id="phone"
                         name="phone"
                         type="tel"
                         placeholder={t("phone.placeholder")}
-                        className="w-full rounded-lg p-2 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color transition-shadow duration-200"
+                        className="w-full rounded-lg px-3 py-2.5 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color transition-shadow duration-200"
                     />
                 </div>
             </div>
@@ -83,21 +95,24 @@ const Form = ({ locale }: { locale: string }) => {
             {/* Row 2: Email + Country */}
             <div className="flex flex-col md:flex-row gap-4 md:gap-6 w-full">
                 <div className="flex flex-col gap-2 w-full">
-                    <label className="label">{t("email.label")}</label>
+                    <label className="label" htmlFor="email">{t("email.label")}</label>
                     <input
+                        id="email"
                         name="email"
                         type="email"
                         required
                         placeholder={t("email.placeholder")}
-                        className="w-full rounded-lg p-2 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color transition-shadow duration-200"
+                        className="w-full rounded-lg px-3 py-2.5 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color transition-shadow duration-200"
                     />
                 </div>
                 <div className="flex flex-col gap-2 w-full">
-                    <label className="label">{t("country.label")}</label>
+                    <label className="label" htmlFor="country">{t("country.label")}</label>
                     <select
+                        id="country"
                         name="country"
                         defaultValue=""
-                        className="w-full rounded-lg p-2 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color transition-shadow duration-200"
+                        aria-label={t("country.label")}
+                        className="w-full rounded-lg px-3 py-2.5 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color transition-shadow duration-200"
                     >
                         <option value="" disabled>
                             {t("country.placeholder")}
@@ -113,13 +128,14 @@ const Form = ({ locale }: { locale: string }) => {
 
             {/* Row 3: Message */}
             <div className="flex flex-col gap-2 w-full">
-                <label className="label">{t("message.label")}</label>
+                <label className="label" htmlFor="message">{t("message.label")}</label>
                 <textarea
+                    id="message"
                     name="message"
                     required
                     rows={5}
                     placeholder={t("message.placeholder")}
-                    className="w-full rounded-lg p-2 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color transition-shadow duration-200"
+                    className="w-full rounded-lg px-3 py-2.5 bg-white text placeholder:text-footer-labels focus:outline-none focus:ring-2 focus:ring-secondary-color transition-shadow duration-200"
                 />
             </div>
 

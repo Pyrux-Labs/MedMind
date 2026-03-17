@@ -6,7 +6,8 @@ import Top from "@/components/AboutUs/Top";
 import Title from "@/components/common/Title";
 import FullBleed from "@/components/common/FullBleed";
 
-const BASE_URL = "https://www.medmindls.com";
+const BASE_URL =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.medmind.com.ar";
 type Params = Promise<{ locale: string }>;
 
 export async function generateMetadata({

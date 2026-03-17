@@ -29,7 +29,7 @@ const Title = ({
             className={`${noMargin ? "mb-7" : "my-16 md:my-30"} ${alignClass} fade-up ${isVisible ? "revealed" : ""}`}
         >
             <h1
-                className={`main-title underline underline-offset-15 decoration-secondary-color decoration-1`}
+                className={`main-title underline underline-offset-8 md:underline-offset-15 decoration-secondary-color decoration-1`}
             >
                 {text}
             </h1>

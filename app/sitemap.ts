@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { fetchArticles } from "@/lib/api/articles";
 
-const BASE_URL = "https://www.medmindls.com";
+const BASE_URL =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.medmind.com.ar";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const staticRoutes = ["", "/about", "/contact", "/news"];

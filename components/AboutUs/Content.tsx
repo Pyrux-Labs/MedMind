@@ -11,20 +11,20 @@ const Content = () => {
             <Founder
                 name={t("guillermina.name")}
                 bio={t("guillermina.bio")}
-                imageSrc={"/about/content/test.jpeg"}
-                email={"info@medmindls.com"}
+                imageSrc={"/about/content/guillebassi.jpeg"}
+                email={"info@medmind.com.ar"}
                 linkedIn={
                     "https://www.linkedin.com/in/guillermina-bassi-65908b195/"
                 }
-                className="items-center lg:items-end text-center lg:text-right"
+                className="lg:items-end lg:text-right"
             />
             <Founder
                 name={t("lucia.name")}
                 bio={t("lucia.bio")}
                 imageSrc={"/about/content/lulabiselli.jpeg"}
-                email={"info@medmindls.com"}
+                email={"info@medmind.com.ar"}
                 linkedIn={"https://www.linkedin.com/in/luc%C3%ADabiselli/"}
-                className="items-center lg:items-start lg:mt-15"
+                className="lg:mt-15"
             />
         </div>
     );

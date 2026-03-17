@@ -4,7 +4,8 @@ import Title from "@/components/common/Title";
 import Footer from "@/components/ContactUs/Footer";
 import Form from "@/components/ContactUs/Form";
 
-const BASE_URL = "https://www.medmindls.com";
+const BASE_URL =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.medmind.com.ar";
 type Params = Promise<{ locale: string }>;
 
 export async function generateMetadata({

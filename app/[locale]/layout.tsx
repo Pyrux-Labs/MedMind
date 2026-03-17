@@ -8,7 +8,8 @@ import NavBar from "@/components/common/NavBar";
 import Footer from "@/components/common/Footer";
 import { ArticleLocaleProvider } from "@/components/common/ArticleLocaleContext";
 
-const BASE_URL = "https://www.medmindls.com";
+const BASE_URL =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.medmind.com.ar";
 
 type Params = Promise<{ locale: string }>;
 
@@ -40,7 +41,23 @@ export async function generateMetadata({
             "MedMind",
         ],
         icons: {
-            icon: "/icons/favicon.svg",
+            icon: [
+                {
+                    url: "/icons/favicon.svg",
+                    type: "image/svg+xml",
+                },
+                {
+                    url: "/icons/favicon-32x32.png",
+                    sizes: "32x32",
+                    type: "image/png",
+                },
+                {
+                    url: "/icons/favicon-16x16.png",
+                    sizes: "16x16",
+                    type: "image/png",
+                },
+            ],
+            apple: "/icons/apple-touch-icon.png",
         },
         openGraph: {
             title: t("title"),
@@ -51,10 +68,10 @@ export async function generateMetadata({
             type: "website",
             images: [
                 {
-                    url: "/icons/logo.svg",
-                    width: 235,
-                    height: 81,
-                    alt: "MedMind",
+                    url: "/og-image.png",
+                    width: 1200,
+                    height: 630,
+                    alt: "MedMind — Linguistic Solutions",
                 },
             ],
         },
@@ -62,7 +79,7 @@ export async function generateMetadata({
             card: "summary_large_image",
             title: t("title"),
             description: t("description"),
-            images: ["/icons/logo.svg"],
+            images: ["/og-image.png"],
         },
         alternates: {
             canonical: `${BASE_URL}/${locale}`,
@@ -89,7 +106,7 @@ function OrganizationJsonLd({ locale }: { locale: string }) {
                 : "Specialized linguistic solutions in health and education between English and Spanish.",
         contactPoint: {
             "@type": "ContactPoint",
-            email: "info@medmindls.com",
+            email: "info@medmind.com.ar",
             contactType: "customer service",
             availableLanguage: ["English", "Spanish"],
         },
@@ -129,8 +146,24 @@ export default async function LocaleLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale}>
-            <body className="overflow-x-hidden" suppressHydrationWarning>
+        <html lang={locale} className="overflow-x-hidden">
+            <head>
+                <link
+                    rel="preload"
+                    href="/fonts/Butler-Medium.woff2"
+                    as="font"
+                    type="font/woff2"
+                    crossOrigin="anonymous"
+                />
+                <link
+                    rel="preload"
+                    href="/fonts/CooperHewitt-Medium.woff2"
+                    as="font"
+                    type="font/woff2"
+                    crossOrigin="anonymous"
+                />
+            </head>
+            <body className="overflow-x-hidden max-w-full" suppressHydrationWarning>
                 <OrganizationJsonLd locale={locale} />
                 <NextIntlClientProvider messages={messages}>
                     <ArticleLocaleProvider>

@@ -61,8 +61,54 @@ const Content = ({ namespace, imageSrc, imageLeft = false }: ContentProps) => {
             ref={ref}
             className="my-16 lg:my-30 flex flex-col lg:flex-row lg:h-136 gap-8 lg:gap-12 justify-between"
         >
-            {imageLeft ? imageBlock : textBlock}
-            {imageLeft ? textBlock : imageBlock}
+            {/* Mobile: always title-image-description-items (vertical) */}
+            <div className="flex flex-col gap-8 lg:hidden">
+                <div
+                    className={`slide-in-left ${isVisible ? "revealed" : ""}`}
+                >
+                    <h2 className="main-title">{t("title")}</h2>
+                </div>
+                <div
+                    className={`relative w-full h-64 md:h-80 shrink-0 slide-in-right ${isVisible ? "revealed" : ""}`}
+                >
+                    <Image
+                        src={imageSrc}
+                        alt={t("title")}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 544px"
+                        className="object-cover rounded-2xl shadow-custom"
+                    />
+                </div>
+                <div
+                    className={`slide-in-left ${isVisible ? "revealed" : ""}`}
+                >
+                    <p className="text pb-6">{t("description")}</p>
+                    <div className="bg-white rounded-xl p-4 shadow-custom w-full">
+                        {(t.raw("items") as string[]).map(
+                            (item: string, index: number) => (
+                                <div
+                                    key={index}
+                                    className="flex border-b gap-3 h-10 items-center border-secondary-color last:border-b-0"
+                                >
+                                    <Image
+                                        src="/landing/content/check.svg"
+                                        alt=""
+                                        height={19.5}
+                                        width={19.5}
+                                        className="shrink-0"
+                                    />
+                                    <p className="text">{item}</p>
+                                </div>
+                            ),
+                        )}
+                    </div>
+                </div>
+            </div>
+            {/* Desktop: original alternating layout */}
+            <div className="hidden lg:contents">
+                {imageLeft ? imageBlock : textBlock}
+                {imageLeft ? textBlock : imageBlock}
+            </div>
         </div>
     );
 };

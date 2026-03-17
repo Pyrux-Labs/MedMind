@@ -21,19 +21,19 @@ const Founder = ({
 }: FounderProps) => {
     return (
         <div
-            className={`w-full lg:w-130 flex flex-col gap-6 lg:gap-10 ${className ?? ""}`}
+            className={`w-full lg:w-130 flex flex-col gap-6 lg:gap-10 items-start text-left ${className ?? ""}`}
         >
+            <Title text={name} noMargin />
             <Image
                 src={imageSrc}
                 alt={name}
                 width={529}
                 height={529}
                 sizes="(max-width: 1024px) 80vw, 529px"
-                className="object-cover rounded-2xl shadow-custom w-full max-w-md mx-auto lg:max-w-none lg:mx-0"
+                className="object-cover rounded-2xl shadow-custom w-full max-w-md lg:max-w-none"
             />
-            <Title text={name} noMargin />
             <p className="text">{bio}</p>
-            <div className="flex gap-4 justify-center lg:justify-start">
+            <div className="flex gap-4">
                 <SocialButton src="/social/linkedin.svg" href={linkedIn} />
                 <SocialButton src="/social/email.svg" email={email} />
             </div>
