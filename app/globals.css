@@ -19,8 +19,8 @@
     font-display: swap;
 }
 @font-face {
-    font-family: "Nunito Sans";
-    src: url("/fonts/NunitoSans-SemiBold.woff2") format("woff2");
+    font-family: "Poppins";
+    src: url("/fonts/Poppins-SemiBold.woff2") format("woff2");
     font-weight: 600;
     font-display: swap;
 }
@@ -63,7 +63,7 @@
     );
     --butler: "Butler";
     --cooper-hewitt: "Cooper Hewitt";
-    --keep-calm: "Nunito Sans";
+    --keep-calm: "Poppins";
 }
 
 /* --hero-title-start: #a84510;
@@ -99,6 +99,7 @@
         font-family: var(--keep-calm);
         font-size: 16px;
         font-weight: 700;
+        letter-spacing: 0.06em;
         color: var(--color-main-bg);
     }
     .text-pyrux-gradient {

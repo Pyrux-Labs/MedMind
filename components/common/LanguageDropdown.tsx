@@ -42,7 +42,7 @@ const LanguageDropdown = () => {
 					onClick={toggleOpen}
 					role="button"
 					aria-expanded={open}
-					aria-label="Select language"
+					aria-label={selected.label}
 					tabIndex={0}
 					onKeyDown={(e) => {
 						if (e.key === "Enter" || e.key === " ") {
@@ -56,7 +56,7 @@ const LanguageDropdown = () => {
 						width={16}
 						height={18}
 					/>
-					<p className="label">{selected.label}</p>
+					<p className="label leading-none translate-y-px">{selected.label}</p>
 				</div>
 			</div>
 
@@ -75,7 +75,7 @@ const LanguageDropdown = () => {
 							key={lang.code}
 							className="h-6.5 px-3 flex items-center justify-end cursor-pointer border-t border-main-color hover:bg-main-color/10 transition-colors duration-100"
 							onClick={() => selectLanguage(lang)}>
-							<p className="label">{lang.label}</p>
+							<p className="label leading-none translate-y-px">{lang.label}</p>
 						</div>
 					))}
 			</div>

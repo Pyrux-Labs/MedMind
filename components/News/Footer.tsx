@@ -23,7 +23,7 @@ const Footer = ({ article }: FooterProps) => {
                 className="rounded-full"
             />
             <div>
-                <p className="label text-secondary-color!">Autora</p>
+                <p className="label text-footer-labels!">Autora</p>
                 <p className="label">{article.author.fullname}</p>
             </div>
         </div>

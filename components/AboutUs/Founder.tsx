@@ -23,17 +23,19 @@ const Founder = ({
         <div
             className={`w-full lg:w-130 flex flex-col gap-6 lg:gap-10 items-start text-left ${className ?? ""}`}
         >
-            <Title text={name} noMargin />
+            <div className="order-1 lg:order-2 w-full">
+                <Title text={name} noMargin />
+            </div>
             <Image
                 src={imageSrc}
                 alt={name}
                 width={529}
                 height={529}
                 sizes="(max-width: 1024px) 80vw, 529px"
-                className="object-cover rounded-2xl shadow-custom w-full max-w-md lg:max-w-none"
+                className="object-cover rounded-2xl shadow-custom w-full max-w-md lg:max-w-none order-2 lg:order-1"
             />
-            <p className="text">{bio}</p>
-            <div className="flex gap-4">
+            <p className="text order-3">{bio}</p>
+            <div className="flex gap-4 order-4">
                 <SocialButton src="/social/linkedin.svg" href={linkedIn} />
                 <SocialButton src="/social/email.svg" email={email} />
             </div>

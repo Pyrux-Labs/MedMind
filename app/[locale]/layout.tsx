@@ -90,6 +90,9 @@ export async function generateMetadata({
             },
         },
         robots: { index: true, follow: true },
+        verification: {
+            google: "95e86ccd26aea28b",
+        },
     };
 }
 
@@ -158,6 +161,13 @@ export default async function LocaleLayout({
                 <link
                     rel="preload"
                     href="/fonts/CooperHewitt-Medium.woff2"
+                    as="font"
+                    type="font/woff2"
+                    crossOrigin="anonymous"
+                />
+                <link
+                    rel="preload"
+                    href="/fonts/CooperHewitt-Book.woff2"
                     as="font"
                     type="font/woff2"
                     crossOrigin="anonymous"

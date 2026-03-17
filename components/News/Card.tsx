@@ -14,9 +14,9 @@ const Card = ({ article, locale }: CardProps) => {
     return (
         <Link
             href={`/news/${article.slug}`}
-            className="w-full h-auto md:h-143 shadow-custom rounded-sm flex flex-col gap-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out"
+            className="w-full h-auto md:h-143 shadow-custom rounded-sm flex flex-col gap-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out overflow-hidden"
         >
-            <div className="relative h-48 md:h-1/2">
+            <div className="relative h-48 md:h-1/2 shrink-0">
                 {coverUrl ? (
                     <Image
                         src={coverUrl}
@@ -29,11 +29,11 @@ const Card = ({ article, locale }: CardProps) => {
                     <div className="absolute inset-0 bg-gray-200" />
                 )}
             </div>
-            <h2 className="md:h-19 mx-5 subtitle line-clamp-2">
+            <h2 className="md:h-19 mx-3 md:mx-5 subtitle line-clamp-2">
                 {article.title}
             </h2>
-            <p className="md:h-30 mx-5 text line-clamp-4">{article.content}</p>
-            <p className="mx-5 mb-4 label">
+            <p className="md:h-30 mx-3 md:mx-5 text line-clamp-4">{article.content}</p>
+            <p className="mx-3 md:mx-5 mb-4 label">
                 {new Date(article.publishedAt).toLocaleDateString(
                     locale === "es" ? "es-AR" : "en-US",
                     { day: "numeric", month: "long", year: "numeric" },
