@@ -26,7 +26,7 @@ function Footer() {
                     <div className="flex gap-4">
                         <SocialButton
                             src="/social/linkedin.svg"
-                            href="https://www.linkedin.com/in/medmind-linguistic-solutions"
+                            href="https://www.linkedin.com/company/medmind-linguistic-solutions"
                         />
                         <SocialButton
                             src="/social/instagram.svg"
