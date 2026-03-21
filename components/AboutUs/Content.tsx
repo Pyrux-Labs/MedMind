@@ -12,7 +12,7 @@ const Content = () => {
                 name={t("guillermina.name")}
                 bio={t("guillermina.bio")}
                 imageSrc={"/about/content/guillebassi.jpeg"}
-                email={"info@medmind.com.ar"}
+                email={"info@medmindls.com"}
                 linkedIn={
                     "https://www.linkedin.com/in/guillermina-bassi-65908b195/"
                 }
@@ -22,7 +22,7 @@ const Content = () => {
                 name={t("lucia.name")}
                 bio={t("lucia.bio")}
                 imageSrc={"/about/content/lulabiselli.jpeg"}
-                email={"info@medmind.com.ar"}
+                email={"info@medmindls.com"}
                 linkedIn={"https://www.linkedin.com/in/luc%C3%ADabiselli/"}
                 className="lg:mt-15"
             />

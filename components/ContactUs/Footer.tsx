@@ -16,7 +16,7 @@ const Footer = () => {
                     className="w-20 h-20 md:w-28 md:h-28"
                 />
                 <h2 className="subtitle">{t("contact")}</h2>
-                <p className="label text-footer-labels!">info@medmind.com.ar</p>
+                <p className="label text-footer-labels!">info@medmindls.com</p>
             </div>
             <div className="gap-5 flex flex-col text-center items-center">
                 <Image
