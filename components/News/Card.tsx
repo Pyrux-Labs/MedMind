@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { getStrapiMediaURL } from "@/lib/strapi";
+import { stripMarkdown } from "@/lib/markdown";
 import type { Article } from "@/lib/api/articles";
 
 interface CardProps {
@@ -32,7 +33,7 @@ const Card = ({ article, locale }: CardProps) => {
             <h2 className="md:h-19 mx-3 md:mx-5 subtitle line-clamp-2">
                 {article.title}
             </h2>
-            <p className="md:h-30 mx-3 md:mx-5 text line-clamp-4">{article.content}</p>
+            <p className="md:h-30 mx-3 md:mx-5 text line-clamp-4">{stripMarkdown(article.content)}</p>
             <p className="mx-3 md:mx-5 mb-4 label">
                 {new Date(article.publishedAt).toLocaleDateString(
                     locale === "es" ? "es-AR" : "en-US",
